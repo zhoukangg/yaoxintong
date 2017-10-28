@@ -1,16 +1,19 @@
 package cn.edu.bupt.yaoxintong.util;
 
-public class Logger extends org.apache.log4j.Logger {
-	protected Logger(String name) {
-		super(name);
-		// TODO Auto-generated constructor stub
-	}
+public class Logger {
+
+	private org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(Logger.class);
 
 	private static class LazyHolder {
-		private static final Logger INSTANCE = new Logger("yaoxintong");
+		private static final Logger INSTANCE = new Logger();
 	}
 
 	public static final Logger getInstance() {
 		return LazyHolder.INSTANCE;
+	}
+
+	public void info(String string) {
+		// TODO Auto-generated method stub
+		logger.info(string);
 	}
 }

@@ -465,18 +465,20 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.POST)
-	public @ResponseBody ReturnModel logout(String token, String new_password, HttpServletResponse response,
-			HttpServletRequest request) {
+	public @ResponseBody ReturnModel logout(String token, HttpServletResponse response, HttpServletRequest request) {
 		ReturnModel result = new ReturnModel();
 
 		if (StringUtil.isEmpty(token)) {
-			result.setResult(false);
-			result.setReason(Constant.REASON_TOKEN_IS_NULL);
+			result.setResult(true);
+			if (Constant.DEBUG)
+				result.setReason(Constant.REASON_TOKEN_IS_NULL);
+			else
+				result.setReason(Constant.REASON_UNKNOW);
 			return result;
 		}
 
 		if (!loginTokenService.isTokenValid(token)) {
-			result.setResult(false);
+			result.setResult(true);
 			result.setReason(Constant.REASON_TOKEN_IS_INVALIID);
 			return result;
 		}

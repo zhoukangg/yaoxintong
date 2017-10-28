@@ -470,6 +470,11 @@ public class UserController {
 
 		logger.info("======进入了UserController的/logout方法，参数 token = " + token);
 
+		// 解决Ajax跨域请求问题
+		response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
+		response.setHeader("Access-Control-Allow-Credentials", "true");
+
+		
 		if (StringUtil.isEmpty(token)) {
 			result.setResult(true);
 			if (Constant.DEBUG)
@@ -485,10 +490,7 @@ public class UserController {
 			return result;
 		}
 
-		// 解决Ajax跨域请求问题
-		response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
-		response.setHeader("Access-Control-Allow-Credentials", "true");
-
+		
 		LoginToken loginToken = loginTokenService.getLoginTokenByToken(token);
 		logger.info("loginToken:" + loginToken);
 		if (loginToken != null & Constant.LOGIN_TOKEN_STATUS_VALID.equals(loginToken.getStatus())) {

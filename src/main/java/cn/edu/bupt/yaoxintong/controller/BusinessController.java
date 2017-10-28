@@ -9,7 +9,6 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,10 +22,11 @@ import cn.edu.bupt.yaoxintong.pojo.ContactInformation;
 import cn.edu.bupt.yaoxintong.pojo.LoginToken;
 import cn.edu.bupt.yaoxintong.pojo.YaoxintongBusiness;
 import cn.edu.bupt.yaoxintong.response.model.BusinessInfo;
+import cn.edu.bupt.yaoxintong.service.BusinessService;
 import cn.edu.bupt.yaoxintong.service.ContactInformationService;
 import cn.edu.bupt.yaoxintong.service.LoginTokenService;
-import cn.edu.bupt.yaoxintong.service.BusinessService;
 import cn.edu.bupt.yaoxintong.util.Constant;
+import cn.edu.bupt.yaoxintong.util.Logger;
 import cn.edu.bupt.yaoxintong.util.ReturnModel;
 import cn.edu.bupt.yaoxintong.util.StringUtil;
 
@@ -40,7 +40,7 @@ import cn.edu.bupt.yaoxintong.util.StringUtil;
 @RequestMapping("/business")
 public class BusinessController {
 
-	private static final Logger logger = Logger.getLogger(BusinessController.class);
+	private static final Logger logger = Logger.getInstance();
 
 	@Autowired
 	BusinessService BusinessService;
@@ -72,7 +72,7 @@ public class BusinessController {
 		response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
 		response.setHeader("Access-Control-Allow-Credentials", "true");
 
-		logger.info("======进入了UserController的/register方法，参数：username = " + username + " business_name = "
+		logger.info("======进入了BusinessController的/register方法，参数：username = " + username + " business_name = "
 				+ business_name + " business_type = " + business_type + " email = " + email + " phone = " + phone
 				+ " password = " + password + " sex = " + sex);
 
@@ -239,7 +239,7 @@ public class BusinessController {
 	public @ResponseBody ReturnModel BusinessInfo(String token, HttpServletResponse response,
 			HttpServletRequest request) {
 
-		logger.info("======进入了UserController的/userInfo方法，参数：token = " + token);
+		logger.info("======进入了BusinessController的/userInfo方法，参数：token = " + token);
 
 		// 解决Ajax跨域请求问题
 		response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
@@ -299,7 +299,7 @@ public class BusinessController {
 			result.setReason(Constant.REASON_TOKEN_IS_INVALIID);
 			return result;
 		}
-		logger.info("======进入了UserController的/modify方法，参数：username = " + username + " email = " + email + " phone = "
+		logger.info("======进入了BusinessController的/modify方法，参数：username = " + username + " email = " + email + " phone = "
 				+ phone + " sex = " + sex + " token = " + token);
 
 		// 解决Ajax跨域请求问题
@@ -410,7 +410,7 @@ public class BusinessController {
 			return result;
 		}
 
-		logger.info("======进入了UserController的/changepassword方法，参数：password = " + password + " new_password:"
+		logger.info("======进入了BusinessController的/changepassword方法，参数：password = " + password + " new_password:"
 				+ new_password + " token = " + token);
 
 		// 解决Ajax跨域请求问题
@@ -461,7 +461,7 @@ public class BusinessController {
 			return result;
 		}
 
-		logger.info("======进入了UserController的/logout方法，参数 token = " + token);
+		logger.info("======进入了BusinessController的/logout方法，参数 token = " + token);
 
 		// 解决Ajax跨域请求问题
 		response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
@@ -470,7 +470,7 @@ public class BusinessController {
 		LoginToken loginToken = loginTokenService.getLoginTokenByToken(token);
 		logger.info("loginToken:" + loginToken);
 		if (loginToken != null & Constant.LOGIN_TOKEN_STATUS_VALID.equals(loginToken.getStatus())) {
-
+			logger.info("loginToken.getUserid():" + loginToken.getUserid());
 			YaoxintongBusiness user = BusinessService.getUser(loginToken.getUserid());
 
 			if (user != null) {

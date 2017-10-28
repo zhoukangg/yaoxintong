@@ -11,7 +11,6 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +28,7 @@ import cn.edu.bupt.yaoxintong.service.ContactInformationService;
 import cn.edu.bupt.yaoxintong.service.LoginTokenService;
 import cn.edu.bupt.yaoxintong.service.UserService;
 import cn.edu.bupt.yaoxintong.util.Constant;
+import cn.edu.bupt.yaoxintong.util.Logger;
 import cn.edu.bupt.yaoxintong.util.ReturnModel;
 import cn.edu.bupt.yaoxintong.util.StringUtil;
 
@@ -290,6 +290,9 @@ public class UserController {
 			HttpServletRequest request) {
 		ReturnModel result = new ReturnModel();
 
+		logger.info("======进入了UserController的/modify方法，参数：username = " + username + " email = " + email + " phone = "
+				+ "birthday" + birthday + phone + " sex = " + sex + " token = " + token);
+
 		if (StringUtil.isEmpty(token)) {
 			result.setResult(false);
 			result.setReason(Constant.REASON_TOKEN_IS_NULL);
@@ -301,9 +304,6 @@ public class UserController {
 			result.setReason(Constant.REASON_TOKEN_IS_INVALIID);
 			return result;
 		}
-
-		logger.info("======进入了UserController的/modify方法，参数：username = " + username + " email = " + email + " phone = "
-				+ "birthday" + birthday + phone + " sex = " + sex + " token = " + token);
 
 		// 解决Ajax跨域请求问题
 		response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
@@ -412,6 +412,9 @@ public class UserController {
 			HttpServletResponse response, HttpServletRequest request) {
 		ReturnModel result = new ReturnModel();
 
+		logger.info("======进入了UserController的/changepassword方法，参数：password = " + password + " new_password:"
+				+ new_password + " token = " + token);
+
 		if (StringUtil.isEmpty(token)) {
 			result.setResult(false);
 			result.setReason(Constant.REASON_TOKEN_IS_NULL);
@@ -423,9 +426,6 @@ public class UserController {
 			result.setReason(Constant.REASON_TOKEN_IS_INVALIID);
 			return result;
 		}
-
-		logger.info("======进入了UserController的/changepassword方法，参数：password = " + password + " new_password:"
-				+ new_password + " token = " + token);
 
 		// 解决Ajax跨域请求问题
 		response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
@@ -468,6 +468,8 @@ public class UserController {
 	public @ResponseBody ReturnModel logout(String token, HttpServletResponse response, HttpServletRequest request) {
 		ReturnModel result = new ReturnModel();
 
+		logger.info("======进入了UserController的/logout方法，参数 token = " + token);
+
 		if (StringUtil.isEmpty(token)) {
 			result.setResult(true);
 			if (Constant.DEBUG)
@@ -482,8 +484,6 @@ public class UserController {
 			result.setReason(Constant.REASON_TOKEN_IS_INVALIID);
 			return result;
 		}
-
-		logger.info("======进入了UserController的/logout方法，参数 token = " + token);
 
 		// 解决Ajax跨域请求问题
 		response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));

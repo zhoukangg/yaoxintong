@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.bupt.yaoxintong.dao.MedicineMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.bupt.yaoxintong.pojo.Medicine" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="drug_name" property="drugName" jdbcType="VARCHAR" />
+    <result column="brand" property="brand" jdbcType="VARCHAR" />
+    <result column="manufacturer" property="manufacturer" jdbcType="VARCHAR" />
+    <result column="license_number" property="licenseNumber" jdbcType="VARCHAR" />
+    <result column="recommend" property="recommend" jdbcType="TINYINT" />
+    <result column="drug_form" property="drugForm" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="drug_type_1" property="drugType1" jdbcType="VARCHAR" />
+    <result column="drug_type_2" property="drugType2" jdbcType="VARCHAR" />
+    <result column="drug_type_3" property="drugType3" jdbcType="VARCHAR" />
+    <result column="prescription_type" property="prescriptionType" jdbcType="VARCHAR" />
+    <result column="import_type" property="importType" jdbcType="VARCHAR" />
+    <result column="drug_specifications" property="drugSpecifications" jdbcType="VARCHAR" />
+    <result column="product_place" property="productPlace" jdbcType="VARCHAR" />
+    <result column="valid_period" property="validPeriod" jdbcType="VARCHAR" />
+    <result column="use_for_illness" property="useForIllness" jdbcType="VARCHAR" />
+    <result column="use_for_people" property="useForPeople" jdbcType="VARCHAR" />
+    <result column="use_function" property="useFunction" jdbcType="VARCHAR" />
+    <result column="dosage_use" property="dosageUse" jdbcType="VARCHAR" />
+    <result column="Storage_condition" property="storageCondition" jdbcType="VARCHAR" />
+    <result column="product_weight" property="productWeight" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DOUBLE" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, drug_name, brand, manufacturer, license_number, recommend, drug_form, type, drug_type_1, 
+    drug_type_2, drug_type_3, prescription_type, import_type, drug_specifications, product_place, 
+    valid_period, use_for_illness, use_for_people, use_function, dosage_use, Storage_condition, 
+    product_weight, price
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.edu.bupt.yaoxintong.pojo.MedicineExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from medicine
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from medicine
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from medicine
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.edu.bupt.yaoxintong.pojo.MedicineExample" >
+    delete from medicine
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.edu.bupt.yaoxintong.pojo.Medicine" >
+    insert into medicine (id, drug_name, brand, 
+      manufacturer, license_number, recommend, 
+      drug_form, type, drug_type_1, 
+      drug_type_2, drug_type_3, prescription_type, 
+      import_type, drug_specifications, product_place, 
+      valid_period, use_for_illness, use_for_people, 
+      use_function, dosage_use, Storage_condition, 
+      product_weight, price)
+    values (#{id,jdbcType=VARCHAR}, #{drugName,jdbcType=VARCHAR}, #{brand,jdbcType=VARCHAR}, 
+      #{manufacturer,jdbcType=VARCHAR}, #{licenseNumber,jdbcType=VARCHAR}, #{recommend,jdbcType=TINYINT}, 
+      #{drugForm,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{drugType1,jdbcType=VARCHAR}, 
+      #{drugType2,jdbcType=VARCHAR}, #{drugType3,jdbcType=VARCHAR}, #{prescriptionType,jdbcType=VARCHAR}, 
+      #{importType,jdbcType=VARCHAR}, #{drugSpecifications,jdbcType=VARCHAR}, #{productPlace,jdbcType=VARCHAR}, 
+      #{validPeriod,jdbcType=VARCHAR}, #{useForIllness,jdbcType=VARCHAR}, #{useForPeople,jdbcType=VARCHAR}, 
+      #{useFunction,jdbcType=VARCHAR}, #{dosageUse,jdbcType=VARCHAR}, #{storageCondition,jdbcType=VARCHAR}, 
+      #{productWeight,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.bupt.yaoxintong.pojo.Medicine" >
+    insert into medicine
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="drugName != null" >
+        drug_name,
+      </if>
+      <if test="brand != null" >
+        brand,
+      </if>
+      <if test="manufacturer != null" >
+        manufacturer,
+      </if>
+      <if test="licenseNumber != null" >
+        license_number,
+      </if>
+      <if test="recommend != null" >
+        recommend,
+      </if>
+      <if test="drugForm != null" >
+        drug_form,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="drugType1 != null" >
+        drug_type_1,
+      </if>
+      <if test="drugType2 != null" >
+        drug_type_2,
+      </if>
+      <if test="drugType3 != null" >
+        drug_type_3,
+      </if>
+      <if test="prescriptionType != null" >
+        prescription_type,
+      </if>
+      <if test="importType != null" >
+        import_type,
+      </if>
+      <if test="drugSpecifications != null" >
+        drug_specifications,
+      </if>
+      <if test="productPlace != null" >
+        product_place,
+      </if>
+      <if test="validPeriod != null" >
+        valid_period,
+      </if>
+      <if test="useForIllness != null" >
+        use_for_illness,
+      </if>
+      <if test="useForPeople != null" >
+        use_for_people,
+      </if>
+      <if test="useFunction != null" >
+        use_function,
+      </if>
+      <if test="dosageUse != null" >
+        dosage_use,
+      </if>
+      <if test="storageCondition != null" >
+        Storage_condition,
+      </if>
+      <if test="productWeight != null" >
+        product_weight,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="drugName != null" >
+        #{drugName,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null" >
+        #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="manufacturer != null" >
+        #{manufacturer,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseNumber != null" >
+        #{licenseNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="recommend != null" >
+        #{recommend,jdbcType=TINYINT},
+      </if>
+      <if test="drugForm != null" >
+        #{drugForm,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="drugType1 != null" >
+        #{drugType1,jdbcType=VARCHAR},
+      </if>
+      <if test="drugType2 != null" >
+        #{drugType2,jdbcType=VARCHAR},
+      </if>
+      <if test="drugType3 != null" >
+        #{drugType3,jdbcType=VARCHAR},
+      </if>
+      <if test="prescriptionType != null" >
+        #{prescriptionType,jdbcType=VARCHAR},
+      </if>
+      <if test="importType != null" >
+        #{importType,jdbcType=VARCHAR},
+      </if>
+      <if test="drugSpecifications != null" >
+        #{drugSpecifications,jdbcType=VARCHAR},
+      </if>
+      <if test="productPlace != null" >
+        #{productPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="validPeriod != null" >
+        #{validPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="useForIllness != null" >
+        #{useForIllness,jdbcType=VARCHAR},
+      </if>
+      <if test="useForPeople != null" >
+        #{useForPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="useFunction != null" >
+        #{useFunction,jdbcType=VARCHAR},
+      </if>
+      <if test="dosageUse != null" >
+        #{dosageUse,jdbcType=VARCHAR},
+      </if>
+      <if test="storageCondition != null" >
+        #{storageCondition,jdbcType=VARCHAR},
+      </if>
+      <if test="productWeight != null" >
+        #{productWeight,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.edu.bupt.yaoxintong.pojo.MedicineExample" resultType="java.lang.Integer" >
+    select count(*) from medicine
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update medicine
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.drugName != null" >
+        drug_name = #{record.drugName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.brand != null" >
+        brand = #{record.brand,jdbcType=VARCHAR},
+      </if>
+      <if test="record.manufacturer != null" >
+        manufacturer = #{record.manufacturer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.licenseNumber != null" >
+        license_number = #{record.licenseNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.recommend != null" >
+        recommend = #{record.recommend,jdbcType=TINYINT},
+      </if>
+      <if test="record.drugForm != null" >
+        drug_form = #{record.drugForm,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.drugType1 != null" >
+        drug_type_1 = #{record.drugType1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.drugType2 != null" >
+        drug_type_2 = #{record.drugType2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.drugType3 != null" >
+        drug_type_3 = #{record.drugType3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.prescriptionType != null" >
+        prescription_type = #{record.prescriptionType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.importType != null" >
+        import_type = #{record.importType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.drugSpecifications != null" >
+        drug_specifications = #{record.drugSpecifications,jdbcType=VARCHAR},
+      </if>
+      <if test="record.productPlace != null" >
+        product_place = #{record.productPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.validPeriod != null" >
+        valid_period = #{record.validPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="record.useForIllness != null" >
+        use_for_illness = #{record.useForIllness,jdbcType=VARCHAR},
+      </if>
+      <if test="record.useForPeople != null" >
+        use_for_people = #{record.useForPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="record.useFunction != null" >
+        use_function = #{record.useFunction,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dosageUse != null" >
+        dosage_use = #{record.dosageUse,jdbcType=VARCHAR},
+      </if>
+      <if test="record.storageCondition != null" >
+        Storage_condition = #{record.storageCondition,jdbcType=VARCHAR},
+      </if>
+      <if test="record.productWeight != null" >
+        product_weight = #{record.productWeight,jdbcType=VARCHAR},
+      </if>
+      <if test="record.price != null" >
+        price = #{record.price,jdbcType=DOUBLE},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update medicine
+    set id = #{record.id,jdbcType=VARCHAR},
+      drug_name = #{record.drugName,jdbcType=VARCHAR},
+      brand = #{record.brand,jdbcType=VARCHAR},
+      manufacturer = #{record.manufacturer,jdbcType=VARCHAR},
+      license_number = #{record.licenseNumber,jdbcType=VARCHAR},
+      recommend = #{record.recommend,jdbcType=TINYINT},
+      drug_form = #{record.drugForm,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=VARCHAR},
+      drug_type_1 = #{record.drugType1,jdbcType=VARCHAR},
+      drug_type_2 = #{record.drugType2,jdbcType=VARCHAR},
+      drug_type_3 = #{record.drugType3,jdbcType=VARCHAR},
+      prescription_type = #{record.prescriptionType,jdbcType=VARCHAR},
+      import_type = #{record.importType,jdbcType=VARCHAR},
+      drug_specifications = #{record.drugSpecifications,jdbcType=VARCHAR},
+      product_place = #{record.productPlace,jdbcType=VARCHAR},
+      valid_period = #{record.validPeriod,jdbcType=VARCHAR},
+      use_for_illness = #{record.useForIllness,jdbcType=VARCHAR},
+      use_for_people = #{record.useForPeople,jdbcType=VARCHAR},
+      use_function = #{record.useFunction,jdbcType=VARCHAR},
+      dosage_use = #{record.dosageUse,jdbcType=VARCHAR},
+      Storage_condition = #{record.storageCondition,jdbcType=VARCHAR},
+      product_weight = #{record.productWeight,jdbcType=VARCHAR},
+      price = #{record.price,jdbcType=DOUBLE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.bupt.yaoxintong.pojo.Medicine" >
+    update medicine
+    <set >
+      <if test="drugName != null" >
+        drug_name = #{drugName,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null" >
+        brand = #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="manufacturer != null" >
+        manufacturer = #{manufacturer,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseNumber != null" >
+        license_number = #{licenseNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="recommend != null" >
+        recommend = #{recommend,jdbcType=TINYINT},
+      </if>
+      <if test="drugForm != null" >
+        drug_form = #{drugForm,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="drugType1 != null" >
+        drug_type_1 = #{drugType1,jdbcType=VARCHAR},
+      </if>
+      <if test="drugType2 != null" >
+        drug_type_2 = #{drugType2,jdbcType=VARCHAR},
+      </if>
+      <if test="drugType3 != null" >
+        drug_type_3 = #{drugType3,jdbcType=VARCHAR},
+      </if>
+      <if test="prescriptionType != null" >
+        prescription_type = #{prescriptionType,jdbcType=VARCHAR},
+      </if>
+      <if test="importType != null" >
+        import_type = #{importType,jdbcType=VARCHAR},
+      </if>
+      <if test="drugSpecifications != null" >
+        drug_specifications = #{drugSpecifications,jdbcType=VARCHAR},
+      </if>
+      <if test="productPlace != null" >
+        product_place = #{productPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="validPeriod != null" >
+        valid_period = #{validPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="useForIllness != null" >
+        use_for_illness = #{useForIllness,jdbcType=VARCHAR},
+      </if>
+      <if test="useForPeople != null" >
+        use_for_people = #{useForPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="useFunction != null" >
+        use_function = #{useFunction,jdbcType=VARCHAR},
+      </if>
+      <if test="dosageUse != null" >
+        dosage_use = #{dosageUse,jdbcType=VARCHAR},
+      </if>
+      <if test="storageCondition != null" >
+        Storage_condition = #{storageCondition,jdbcType=VARCHAR},
+      </if>
+      <if test="productWeight != null" >
+        product_weight = #{productWeight,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.bupt.yaoxintong.pojo.Medicine" >
+    update medicine
+    set drug_name = #{drugName,jdbcType=VARCHAR},
+      brand = #{brand,jdbcType=VARCHAR},
+      manufacturer = #{manufacturer,jdbcType=VARCHAR},
+      license_number = #{licenseNumber,jdbcType=VARCHAR},
+      recommend = #{recommend,jdbcType=TINYINT},
+      drug_form = #{drugForm,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      drug_type_1 = #{drugType1,jdbcType=VARCHAR},
+      drug_type_2 = #{drugType2,jdbcType=VARCHAR},
+      drug_type_3 = #{drugType3,jdbcType=VARCHAR},
+      prescription_type = #{prescriptionType,jdbcType=VARCHAR},
+      import_type = #{importType,jdbcType=VARCHAR},
+      drug_specifications = #{drugSpecifications,jdbcType=VARCHAR},
+      product_place = #{productPlace,jdbcType=VARCHAR},
+      valid_period = #{validPeriod,jdbcType=VARCHAR},
+      use_for_illness = #{useForIllness,jdbcType=VARCHAR},
+      use_for_people = #{useForPeople,jdbcType=VARCHAR},
+      use_function = #{useFunction,jdbcType=VARCHAR},
+      dosage_use = #{dosageUse,jdbcType=VARCHAR},
+      Storage_condition = #{storageCondition,jdbcType=VARCHAR},
+      product_weight = #{productWeight,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

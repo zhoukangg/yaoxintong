@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.bupt.yaoxintong.dao.AuthenticationDianshangMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang" >
+    <id column="enterprise_name" property="enterpriseName" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="contacts" property="contacts" jdbcType="VARCHAR" />
+    <result column="contact_phone" property="contactPhone" jdbcType="VARCHAR" />
+    <result column="icp" property="icp" jdbcType="VARCHAR" />
+    <result column="drug_trading_license" property="drugTradingLicense" jdbcType="VARCHAR" />
+    <result column="drug_administration_license" property="drugAdministrationLicense" jdbcType="VARCHAR" />
+    <result column="certificate_number" property="certificateNumber" jdbcType="BIGINT" />
+    <result column="authentication_starttime" property="authenticationStarttime" jdbcType="TIMESTAMP" />
+    <result column="valid_date" property="validDate" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    enterprise_name, address, contacts, contact_phone, icp, drug_trading_license, drug_administration_license, 
+    certificate_number, authentication_starttime, valid_date
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshangExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from authentication_dianshang
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from authentication_dianshang
+    where enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from authentication_dianshang
+    where enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshangExample" >
+    delete from authentication_dianshang
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang" >
+    insert into authentication_dianshang (enterprise_name, address, contacts, 
+      contact_phone, icp, drug_trading_license, 
+      drug_administration_license, certificate_number, 
+      authentication_starttime, valid_date)
+    values (#{enterpriseName,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{contacts,jdbcType=VARCHAR}, 
+      #{contactPhone,jdbcType=VARCHAR}, #{icp,jdbcType=VARCHAR}, #{drugTradingLicense,jdbcType=VARCHAR}, 
+      #{drugAdministrationLicense,jdbcType=VARCHAR}, #{certificateNumber,jdbcType=BIGINT}, 
+      #{authenticationStarttime,jdbcType=TIMESTAMP}, #{validDate,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang" >
+    insert into authentication_dianshang
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="enterpriseName != null" >
+        enterprise_name,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="contacts != null" >
+        contacts,
+      </if>
+      <if test="contactPhone != null" >
+        contact_phone,
+      </if>
+      <if test="icp != null" >
+        icp,
+      </if>
+      <if test="drugTradingLicense != null" >
+        drug_trading_license,
+      </if>
+      <if test="drugAdministrationLicense != null" >
+        drug_administration_license,
+      </if>
+      <if test="certificateNumber != null" >
+        certificate_number,
+      </if>
+      <if test="authenticationStarttime != null" >
+        authentication_starttime,
+      </if>
+      <if test="validDate != null" >
+        valid_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="enterpriseName != null" >
+        #{enterpriseName,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="contacts != null" >
+        #{contacts,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPhone != null" >
+        #{contactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="icp != null" >
+        #{icp,jdbcType=VARCHAR},
+      </if>
+      <if test="drugTradingLicense != null" >
+        #{drugTradingLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="drugAdministrationLicense != null" >
+        #{drugAdministrationLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="certificateNumber != null" >
+        #{certificateNumber,jdbcType=BIGINT},
+      </if>
+      <if test="authenticationStarttime != null" >
+        #{authenticationStarttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validDate != null" >
+        #{validDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshangExample" resultType="java.lang.Integer" >
+    select count(*) from authentication_dianshang
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update authentication_dianshang
+    <set >
+      <if test="record.enterpriseName != null" >
+        enterprise_name = #{record.enterpriseName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contacts != null" >
+        contacts = #{record.contacts,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contactPhone != null" >
+        contact_phone = #{record.contactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.icp != null" >
+        icp = #{record.icp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.drugTradingLicense != null" >
+        drug_trading_license = #{record.drugTradingLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="record.drugAdministrationLicense != null" >
+        drug_administration_license = #{record.drugAdministrationLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="record.certificateNumber != null" >
+        certificate_number = #{record.certificateNumber,jdbcType=BIGINT},
+      </if>
+      <if test="record.authenticationStarttime != null" >
+        authentication_starttime = #{record.authenticationStarttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.validDate != null" >
+        valid_date = #{record.validDate,jdbcType=DATE},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update authentication_dianshang
+    set enterprise_name = #{record.enterpriseName,jdbcType=VARCHAR},
+      address = #{record.address,jdbcType=VARCHAR},
+      contacts = #{record.contacts,jdbcType=VARCHAR},
+      contact_phone = #{record.contactPhone,jdbcType=VARCHAR},
+      icp = #{record.icp,jdbcType=VARCHAR},
+      drug_trading_license = #{record.drugTradingLicense,jdbcType=VARCHAR},
+      drug_administration_license = #{record.drugAdministrationLicense,jdbcType=VARCHAR},
+      certificate_number = #{record.certificateNumber,jdbcType=BIGINT},
+      authentication_starttime = #{record.authenticationStarttime,jdbcType=TIMESTAMP},
+      valid_date = #{record.validDate,jdbcType=DATE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang" >
+    update authentication_dianshang
+    <set >
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="contacts != null" >
+        contacts = #{contacts,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPhone != null" >
+        contact_phone = #{contactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="icp != null" >
+        icp = #{icp,jdbcType=VARCHAR},
+      </if>
+      <if test="drugTradingLicense != null" >
+        drug_trading_license = #{drugTradingLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="drugAdministrationLicense != null" >
+        drug_administration_license = #{drugAdministrationLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="certificateNumber != null" >
+        certificate_number = #{certificateNumber,jdbcType=BIGINT},
+      </if>
+      <if test="authenticationStarttime != null" >
+        authentication_starttime = #{authenticationStarttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validDate != null" >
+        valid_date = #{validDate,jdbcType=DATE},
+      </if>
+    </set>
+    where enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang" >
+    update authentication_dianshang
+    set address = #{address,jdbcType=VARCHAR},
+      contacts = #{contacts,jdbcType=VARCHAR},
+      contact_phone = #{contactPhone,jdbcType=VARCHAR},
+      icp = #{icp,jdbcType=VARCHAR},
+      drug_trading_license = #{drugTradingLicense,jdbcType=VARCHAR},
+      drug_administration_license = #{drugAdministrationLicense,jdbcType=VARCHAR},
+      certificate_number = #{certificateNumber,jdbcType=BIGINT},
+      authentication_starttime = #{authenticationStarttime,jdbcType=TIMESTAMP},
+      valid_date = #{validDate,jdbcType=DATE}
+    where enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
+  </update>
+</mapper>

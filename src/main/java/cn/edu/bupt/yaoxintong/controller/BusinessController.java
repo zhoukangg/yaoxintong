@@ -15,17 +15,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import cn.edu.bupt.yaoxintong.componet.PasswordHelper;
 import cn.edu.bupt.yaoxintong.componet.PasswordHelper.PasswordAndSalt;
+import cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang;
+import cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqi;
 import cn.edu.bupt.yaoxintong.pojo.ContactInformation;
 import cn.edu.bupt.yaoxintong.pojo.LoginToken;
 import cn.edu.bupt.yaoxintong.pojo.YaoxintongBusiness;
 import cn.edu.bupt.yaoxintong.response.model.BusinessInfo;
+import cn.edu.bupt.yaoxintong.service.AuthenticationService;
 import cn.edu.bupt.yaoxintong.service.BusinessService;
 import cn.edu.bupt.yaoxintong.service.ContactInformationService;
 import cn.edu.bupt.yaoxintong.service.LoginTokenService;
 import cn.edu.bupt.yaoxintong.util.Constant;
+import cn.edu.bupt.yaoxintong.util.FileUtil;
 import cn.edu.bupt.yaoxintong.util.Logger;
 import cn.edu.bupt.yaoxintong.util.ReturnModel;
 import cn.edu.bupt.yaoxintong.util.StringUtil;
@@ -48,6 +53,8 @@ public class BusinessController {
 	LoginTokenService loginTokenService;
 	@Autowired
 	ContactInformationService contactInformationService;
+	@Autowired
+	AuthenticationService authenticationService;
 
 	@Autowired
 	PasswordHelper passwordHelper;
@@ -299,8 +306,8 @@ public class BusinessController {
 			result.setReason(Constant.REASON_TOKEN_IS_INVALIID);
 			return result;
 		}
-		logger.info("======进入了BusinessController的/modify方法，参数：username = " + username + " email = " + email + " phone = "
-				+ phone + " sex = " + sex + " token = " + token);
+		logger.info("======进入了BusinessController的/modify方法，参数：username = " + username + " email = " + email
+				+ " phone = " + phone + " sex = " + sex + " token = " + token);
 
 		// 解决Ajax跨域请求问题
 		response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
@@ -333,7 +340,7 @@ public class BusinessController {
 					if (!StringUtil.isEmpty(businessName)) {
 						user.setBusinessName(businessName);
 					}
-					
+
 					// 修改businessName
 					if (!StringUtil.isEmpty(contact)) {
 						user.setContact(contact);
@@ -493,4 +500,224 @@ public class BusinessController {
 		}
 		return result;
 	}
+
+	// -----------------------企业----------认证-------------------------------------------------------
+
+	// @Autowired
+	// private AuthenticationService authenticationService;
+
+	@RequestMapping(value = "/applyAuthentication/test", method = RequestMethod.POST)
+	public @ResponseBody String applyAuthenticationTest(MultipartFile file, HttpServletResponse response,
+			HttpServletRequest request) throws Exception {
+		logger.info(file.getOriginalFilename());
+		// 如果文件不为空，写入上传路径
+		if (FileUtil.storeRondom(file) != null) {
+			return "success";
+		} else {
+			return "error";
+		}
+	}
+
+	@RequestMapping(value = "/applyAuthentication/yaoqi", method = RequestMethod.POST)
+	public @ResponseBody ReturnModel applyAuthentication1(String token, String companyName, String contact,
+			String address, String phone, MultipartFile businessLicense, MultipartFile hygieneLicense,
+			MultipartFile foodCirculationLicense, HttpServletResponse response, HttpServletRequest request)
+			throws Exception {
+		ReturnModel result = new ReturnModel();
+
+		if (StringUtil.isEmpty(token)) {
+			result.setResult(false);
+			result.setReason(Constant.REASON_TOKEN_IS_NULL);
+			return result;
+		}
+		logger.info("======进入了BusinessController的/logout方法，参数 token = " + token);
+
+		AuthenticationYaoqi authentication = new AuthenticationYaoqi();
+
+		if (StringUtil.isEmpty(companyName)) {
+			result.setResult(false);
+			result.setReason(Constant.REASON_companyName_IS_NULL);
+			return result;
+		} else {
+			authentication.setCompanyName(companyName);
+		}
+
+		if (StringUtil.isEmpty(contact)) {
+			result.setResult(false);
+			result.setReason(Constant.REASON_contact_IS_NULL);
+			return result;
+		} else {
+			authentication.setContact(contact);
+		}
+
+		if (StringUtil.isEmpty(address)) {
+			result.setResult(false);
+			result.setReason(Constant.REASON_address_IS_NULL);
+			return result;
+		} else {
+			authentication.setAddress(address);
+		}
+
+		if (StringUtil.isEmpty(phone)) {
+			result.setResult(false);
+			result.setReason(Constant.REASON_phone_IS_NULL);
+			return result;
+		} else {
+			authentication.setPhone(phone);
+		}
+
+		if (businessLicense.isEmpty()) {
+			result.setResult(false);
+			result.setReason(Constant.REASON_businessLicense_IS_NULL);
+			return result;
+		} else {
+			String pathBusinessLicense = FileUtil.storeRondom(businessLicense);
+			if (pathBusinessLicense!= null) {
+				authentication.setBusinessLicense(pathBusinessLicense);
+			} else {
+				result.setResult(false);
+				result.setReason(Constant.REASON_UNKNOW);
+				return result;
+			}
+		}
+
+		if (hygieneLicense.isEmpty()) {
+			result.setResult(false);
+			result.setReason(Constant.REASON_hygieneLicense_IS_NULL);
+			return result;
+		} else {
+			String pathHygieneLicense = FileUtil.storeRondom(hygieneLicense);
+			if (pathHygieneLicense!= null) {
+				authentication.setHygieneLicense(pathHygieneLicense);
+			} else {
+				result.setResult(false);
+				result.setReason(Constant.REASON_UNKNOW);
+				return result;
+			}
+		}
+
+		if (foodCirculationLicense.isEmpty()) {
+			result.setResult(false);
+			result.setReason(Constant.REASON_foodCirculationLicense_IS_NULL);
+			return result;
+		} else {
+			String pathfoodCirculationLicense= FileUtil.storeRondom(foodCirculationLicense);
+			if (pathfoodCirculationLicense!= null) {
+				authentication.setFoodCirculationLicense(pathfoodCirculationLicense);
+			} else {
+				result.setResult(false);
+				result.setReason(Constant.REASON_UNKNOW);
+				return result;
+			}
+		}
+		
+		if(authenticationService.addAuthenticationYaoqi(authentication)) {
+			result.setResult(true);
+		}else {
+			result.setResult(false);
+		}
+
+		return result;
+	}
+
+	@RequestMapping(value = "/applyAuthentication/dianshang", method = RequestMethod.POST)
+	public @ResponseBody ReturnModel applyAuthentication2(String token,
+			HttpServletResponse response, HttpServletRequest request, String corporateName, String contact, String address, String phone, MultipartFile icp_filing_information, MultipartFile idtsqc, MultipartFile dmqmsc) throws Exception {
+		ReturnModel result = new ReturnModel();
+
+		if (StringUtil.isEmpty(token)) {
+			result.setResult(false);
+			result.setReason(Constant.REASON_TOKEN_IS_NULL);
+			return result;
+		}
+		logger.info("======进入了BusinessController的/logout方法，参数 token = " + token);
+
+		AuthenticationDianshang authentication = new AuthenticationDianshang();
+
+		if (StringUtil.isEmpty(corporateName)) {
+			result.setResult(false);
+			result.setReason(Constant.REASON_companyName_IS_NULL);
+			return result;
+		} else {
+			authentication.setCorporateName(corporateName);
+		}
+
+		if (StringUtil.isEmpty(contact)) {
+			result.setResult(false);
+			result.setReason(Constant.REASON_contact_IS_NULL);
+			return result;
+		} else {
+			authentication.setContact(contact);
+		}
+
+		if (StringUtil.isEmpty(address)) {
+			result.setResult(false);
+			result.setReason(Constant.REASON_address_IS_NULL);
+			return result;
+		} else {
+			authentication.setDmqmsc(address);
+		}
+
+		if (StringUtil.isEmpty(phone)) {
+			result.setResult(false);
+			result.setReason(Constant.REASON_phone_IS_NULL);
+			return result;
+		} else {
+			authentication.setPhone(phone);
+		}
+
+		if (icp_filing_information.isEmpty()) {
+			result.setResult(false);
+			result.setReason(Constant.REASON_businessLicense_IS_NULL);
+			return result;
+		} else {
+			String pathicp_filing_information = FileUtil.storeRondom(icp_filing_information);
+			if (pathicp_filing_information!= null) {
+				authentication.setIcpFilingInformation(pathicp_filing_information);
+			} else {
+				result.setResult(false);
+				result.setReason(Constant.REASON_UNKNOW);
+				return result;
+			}
+		}
+
+		if (idtsqc.isEmpty()) {
+			result.setResult(false);
+			result.setReason(Constant.REASON_hygieneLicense_IS_NULL);
+			return result;
+		} else {
+			String pathidtsqc = FileUtil.storeRondom(idtsqc);
+			if (pathidtsqc!= null) {
+				authentication.setIdtsqc(pathidtsqc);
+			} else {
+				result.setResult(false);
+				result.setReason(Constant.REASON_UNKNOW);
+				return result;
+			}
+		}
+
+		if (dmqmsc.isEmpty()) {
+			result.setResult(false);
+			result.setReason(Constant.REASON_foodCirculationLicense_IS_NULL);
+			return result;
+		} else {
+			String pathdmqmsc = FileUtil.storeRondom(dmqmsc);
+			if (pathdmqmsc!= null) {
+				authentication.setDmqmsc(pathdmqmsc);
+			} else {
+				result.setResult(false);
+				result.setReason(Constant.REASON_UNKNOW);
+				return result;
+			}
+		}
+		
+		if(authenticationService.addAuthenticationDianshang(authentication)) {
+			result.setResult(true);
+		}else {
+			result.setResult(false);
+		}
+
+		return result;
+	}
+
 }

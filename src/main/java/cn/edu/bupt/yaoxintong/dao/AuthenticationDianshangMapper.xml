@@ -2,16 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.edu.bupt.yaoxintong.dao.AuthenticationDianshangMapper" >
   <resultMap id="BaseResultMap" type="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang" >
-    <id column="enterprise_name" property="enterpriseName" jdbcType="VARCHAR" />
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="corporate_name" property="corporateName" jdbcType="VARCHAR" />
+    <result column="contact" property="contact" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
-    <result column="contacts" property="contacts" jdbcType="VARCHAR" />
-    <result column="contact_phone" property="contactPhone" jdbcType="VARCHAR" />
-    <result column="icp" property="icp" jdbcType="VARCHAR" />
-    <result column="drug_trading_license" property="drugTradingLicense" jdbcType="VARCHAR" />
-    <result column="drug_administration_license" property="drugAdministrationLicense" jdbcType="VARCHAR" />
-    <result column="certificate_number" property="certificateNumber" jdbcType="BIGINT" />
-    <result column="authentication_starttime" property="authenticationStarttime" jdbcType="TIMESTAMP" />
-    <result column="valid_date" property="validDate" jdbcType="DATE" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="icp_filing_ information" property="icpFilingInformation" jdbcType="VARCHAR" />
+    <result column="idtsqc" property="idtsqc" jdbcType="VARCHAR" />
+    <result column="dmqmsc" property="dmqmsc" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -72,8 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    enterprise_name, address, contacts, contact_phone, icp, drug_trading_license, drug_administration_license, 
-    certificate_number, authentication_starttime, valid_date
+    id, corporate_name, contact, address, phone, "icp_filing_ information", idtsqc, dmqmsc
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshangExample" >
     select
@@ -89,15 +86,15 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from authentication_dianshang
-    where enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from authentication_dianshang
-    where enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshangExample" >
     delete from authentication_dianshang
@@ -106,79 +103,65 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang" >
-    insert into authentication_dianshang (enterprise_name, address, contacts, 
-      contact_phone, icp, drug_trading_license, 
-      drug_administration_license, certificate_number, 
-      authentication_starttime, valid_date)
-    values (#{enterpriseName,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{contacts,jdbcType=VARCHAR}, 
-      #{contactPhone,jdbcType=VARCHAR}, #{icp,jdbcType=VARCHAR}, #{drugTradingLicense,jdbcType=VARCHAR}, 
-      #{drugAdministrationLicense,jdbcType=VARCHAR}, #{certificateNumber,jdbcType=BIGINT}, 
-      #{authenticationStarttime,jdbcType=TIMESTAMP}, #{validDate,jdbcType=DATE})
+    insert into authentication_dianshang (id, corporate_name, contact, 
+      address, phone, "icp_filing_ information", 
+      idtsqc, dmqmsc)
+    values (#{id,jdbcType=INTEGER}, #{corporateName,jdbcType=VARCHAR}, #{contact,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{icpFilingInformation,jdbcType=VARCHAR}, 
+      #{idtsqc,jdbcType=VARCHAR}, #{dmqmsc,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang" >
     insert into authentication_dianshang
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="enterpriseName != null" >
-        enterprise_name,
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="corporateName != null" >
+        corporate_name,
+      </if>
+      <if test="contact != null" >
+        contact,
       </if>
       <if test="address != null" >
         address,
       </if>
-      <if test="contacts != null" >
-        contacts,
+      <if test="phone != null" >
+        phone,
       </if>
-      <if test="contactPhone != null" >
-        contact_phone,
+      <if test="icpFilingInformation != null" >
+        "icp_filing_ information",
       </if>
-      <if test="icp != null" >
-        icp,
+      <if test="idtsqc != null" >
+        idtsqc,
       </if>
-      <if test="drugTradingLicense != null" >
-        drug_trading_license,
-      </if>
-      <if test="drugAdministrationLicense != null" >
-        drug_administration_license,
-      </if>
-      <if test="certificateNumber != null" >
-        certificate_number,
-      </if>
-      <if test="authenticationStarttime != null" >
-        authentication_starttime,
-      </if>
-      <if test="validDate != null" >
-        valid_date,
+      <if test="dmqmsc != null" >
+        dmqmsc,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="enterpriseName != null" >
-        #{enterpriseName,jdbcType=VARCHAR},
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="corporateName != null" >
+        #{corporateName,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null" >
+        #{contact,jdbcType=VARCHAR},
       </if>
       <if test="address != null" >
         #{address,jdbcType=VARCHAR},
       </if>
-      <if test="contacts != null" >
-        #{contacts,jdbcType=VARCHAR},
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="contactPhone != null" >
-        #{contactPhone,jdbcType=VARCHAR},
+      <if test="icpFilingInformation != null" >
+        #{icpFilingInformation,jdbcType=VARCHAR},
       </if>
-      <if test="icp != null" >
-        #{icp,jdbcType=VARCHAR},
+      <if test="idtsqc != null" >
+        #{idtsqc,jdbcType=VARCHAR},
       </if>
-      <if test="drugTradingLicense != null" >
-        #{drugTradingLicense,jdbcType=VARCHAR},
-      </if>
-      <if test="drugAdministrationLicense != null" >
-        #{drugAdministrationLicense,jdbcType=VARCHAR},
-      </if>
-      <if test="certificateNumber != null" >
-        #{certificateNumber,jdbcType=BIGINT},
-      </if>
-      <if test="authenticationStarttime != null" >
-        #{authenticationStarttime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="validDate != null" >
-        #{validDate,jdbcType=DATE},
+      <if test="dmqmsc != null" >
+        #{dmqmsc,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -191,35 +174,29 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update authentication_dianshang
     <set >
-      <if test="record.enterpriseName != null" >
-        enterprise_name = #{record.enterpriseName,jdbcType=VARCHAR},
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.corporateName != null" >
+        corporate_name = #{record.corporateName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contact != null" >
+        contact = #{record.contact,jdbcType=VARCHAR},
       </if>
       <if test="record.address != null" >
         address = #{record.address,jdbcType=VARCHAR},
       </if>
-      <if test="record.contacts != null" >
-        contacts = #{record.contacts,jdbcType=VARCHAR},
+      <if test="record.phone != null" >
+        phone = #{record.phone,jdbcType=VARCHAR},
       </if>
-      <if test="record.contactPhone != null" >
-        contact_phone = #{record.contactPhone,jdbcType=VARCHAR},
+      <if test="record.icpFilingInformation != null" >
+        "icp_filing_ information" = #{record.icpFilingInformation,jdbcType=VARCHAR},
       </if>
-      <if test="record.icp != null" >
-        icp = #{record.icp,jdbcType=VARCHAR},
+      <if test="record.idtsqc != null" >
+        idtsqc = #{record.idtsqc,jdbcType=VARCHAR},
       </if>
-      <if test="record.drugTradingLicense != null" >
-        drug_trading_license = #{record.drugTradingLicense,jdbcType=VARCHAR},
-      </if>
-      <if test="record.drugAdministrationLicense != null" >
-        drug_administration_license = #{record.drugAdministrationLicense,jdbcType=VARCHAR},
-      </if>
-      <if test="record.certificateNumber != null" >
-        certificate_number = #{record.certificateNumber,jdbcType=BIGINT},
-      </if>
-      <if test="record.authenticationStarttime != null" >
-        authentication_starttime = #{record.authenticationStarttime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.validDate != null" >
-        valid_date = #{record.validDate,jdbcType=DATE},
+      <if test="record.dmqmsc != null" >
+        dmqmsc = #{record.dmqmsc,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -228,16 +205,14 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update authentication_dianshang
-    set enterprise_name = #{record.enterpriseName,jdbcType=VARCHAR},
+    set id = #{record.id,jdbcType=INTEGER},
+      corporate_name = #{record.corporateName,jdbcType=VARCHAR},
+      contact = #{record.contact,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
-      contacts = #{record.contacts,jdbcType=VARCHAR},
-      contact_phone = #{record.contactPhone,jdbcType=VARCHAR},
-      icp = #{record.icp,jdbcType=VARCHAR},
-      drug_trading_license = #{record.drugTradingLicense,jdbcType=VARCHAR},
-      drug_administration_license = #{record.drugAdministrationLicense,jdbcType=VARCHAR},
-      certificate_number = #{record.certificateNumber,jdbcType=BIGINT},
-      authentication_starttime = #{record.authenticationStarttime,jdbcType=TIMESTAMP},
-      valid_date = #{record.validDate,jdbcType=DATE}
+      phone = #{record.phone,jdbcType=VARCHAR},
+      "icp_filing_ information" = #{record.icpFilingInformation,jdbcType=VARCHAR},
+      idtsqc = #{record.idtsqc,jdbcType=VARCHAR},
+      dmqmsc = #{record.dmqmsc,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -245,47 +220,39 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang" >
     update authentication_dianshang
     <set >
+      <if test="corporateName != null" >
+        corporate_name = #{corporateName,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null" >
+        contact = #{contact,jdbcType=VARCHAR},
+      </if>
       <if test="address != null" >
         address = #{address,jdbcType=VARCHAR},
       </if>
-      <if test="contacts != null" >
-        contacts = #{contacts,jdbcType=VARCHAR},
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="contactPhone != null" >
-        contact_phone = #{contactPhone,jdbcType=VARCHAR},
+      <if test="icpFilingInformation != null" >
+        "icp_filing_ information" = #{icpFilingInformation,jdbcType=VARCHAR},
       </if>
-      <if test="icp != null" >
-        icp = #{icp,jdbcType=VARCHAR},
+      <if test="idtsqc != null" >
+        idtsqc = #{idtsqc,jdbcType=VARCHAR},
       </if>
-      <if test="drugTradingLicense != null" >
-        drug_trading_license = #{drugTradingLicense,jdbcType=VARCHAR},
-      </if>
-      <if test="drugAdministrationLicense != null" >
-        drug_administration_license = #{drugAdministrationLicense,jdbcType=VARCHAR},
-      </if>
-      <if test="certificateNumber != null" >
-        certificate_number = #{certificateNumber,jdbcType=BIGINT},
-      </if>
-      <if test="authenticationStarttime != null" >
-        authentication_starttime = #{authenticationStarttime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="validDate != null" >
-        valid_date = #{validDate,jdbcType=DATE},
+      <if test="dmqmsc != null" >
+        dmqmsc = #{dmqmsc,jdbcType=VARCHAR},
       </if>
     </set>
-    where enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang" >
     update authentication_dianshang
-    set address = #{address,jdbcType=VARCHAR},
-      contacts = #{contacts,jdbcType=VARCHAR},
-      contact_phone = #{contactPhone,jdbcType=VARCHAR},
-      icp = #{icp,jdbcType=VARCHAR},
-      drug_trading_license = #{drugTradingLicense,jdbcType=VARCHAR},
-      drug_administration_license = #{drugAdministrationLicense,jdbcType=VARCHAR},
-      certificate_number = #{certificateNumber,jdbcType=BIGINT},
-      authentication_starttime = #{authenticationStarttime,jdbcType=TIMESTAMP},
-      valid_date = #{validDate,jdbcType=DATE}
-    where enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
+    set corporate_name = #{corporateName,jdbcType=VARCHAR},
+      contact = #{contact,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      "icp_filing_ information" = #{icpFilingInformation,jdbcType=VARCHAR},
+      idtsqc = #{idtsqc,jdbcType=VARCHAR},
+      dmqmsc = #{dmqmsc,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

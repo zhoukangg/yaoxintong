@@ -10,7 +10,7 @@ public interface AuthenticationDianshangMapper {
 
     int deleteByExample(AuthenticationDianshangExample example);
 
-    int deleteByPrimaryKey(String enterpriseName);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(AuthenticationDianshang record);
 
@@ -18,7 +18,7 @@ public interface AuthenticationDianshangMapper {
 
     List<AuthenticationDianshang> selectByExample(AuthenticationDianshangExample example);
 
-    AuthenticationDianshang selectByPrimaryKey(String enterpriseName);
+    AuthenticationDianshang selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") AuthenticationDianshang record, @Param("example") AuthenticationDianshangExample example);
 

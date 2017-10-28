@@ -2,16 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.edu.bupt.yaoxintong.dao.AuthenticationYaoqiMapper" >
   <resultMap id="BaseResultMap" type="cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqi" >
-    <id column="enterprise_name" property="enterpriseName" jdbcType="VARCHAR" />
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="company_name" property="companyName" jdbcType="VARCHAR" />
+    <result column="contact" property="contact" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
-    <result column="contacts" property="contacts" jdbcType="VARCHAR" />
-    <result column="contact_phone" property="contactPhone" jdbcType="VARCHAR" />
-    <result column="health_license" property="healthLicense" jdbcType="VARCHAR" />
-    <result column="food_circulation_license" property="foodCirculationLicense" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
     <result column="business_license" property="businessLicense" jdbcType="VARCHAR" />
-    <result column="certificate_number" property="certificateNumber" jdbcType="BIGINT" />
-    <result column="authentication_starttime" property="authenticationStarttime" jdbcType="TIMESTAMP" />
-    <result column="valid_date" property="validDate" jdbcType="DATE" />
+    <result column="hygiene_license" property="hygieneLicense" jdbcType="VARCHAR" />
+    <result column="food_circulation_license" property="foodCirculationLicense" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -72,8 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    enterprise_name, address, contacts, contact_phone, health_license, food_circulation_license, 
-    business_license, certificate_number, authentication_starttime, valid_date
+    id, company_name, contact, address, phone, business_license, hygiene_license, food_circulation_license
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqiExample" >
     select
@@ -89,15 +86,15 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from authentication_yaoqi
-    where enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from authentication_yaoqi
-    where enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqiExample" >
     delete from authentication_yaoqi
@@ -106,79 +103,65 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqi" >
-    insert into authentication_yaoqi (enterprise_name, address, contacts, 
-      contact_phone, health_license, food_circulation_license, 
-      business_license, certificate_number, authentication_starttime, 
-      valid_date)
-    values (#{enterpriseName,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{contacts,jdbcType=VARCHAR}, 
-      #{contactPhone,jdbcType=VARCHAR}, #{healthLicense,jdbcType=VARCHAR}, #{foodCirculationLicense,jdbcType=VARCHAR}, 
-      #{businessLicense,jdbcType=VARCHAR}, #{certificateNumber,jdbcType=BIGINT}, #{authenticationStarttime,jdbcType=TIMESTAMP}, 
-      #{validDate,jdbcType=DATE})
+    insert into authentication_yaoqi (id, company_name, contact, 
+      address, phone, business_license, 
+      hygiene_license, food_circulation_license)
+    values (#{id,jdbcType=INTEGER}, #{companyName,jdbcType=VARCHAR}, #{contact,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{businessLicense,jdbcType=VARCHAR}, 
+      #{hygieneLicense,jdbcType=VARCHAR}, #{foodCirculationLicense,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqi" >
     insert into authentication_yaoqi
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="enterpriseName != null" >
-        enterprise_name,
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="companyName != null" >
+        company_name,
+      </if>
+      <if test="contact != null" >
+        contact,
       </if>
       <if test="address != null" >
         address,
       </if>
-      <if test="contacts != null" >
-        contacts,
-      </if>
-      <if test="contactPhone != null" >
-        contact_phone,
-      </if>
-      <if test="healthLicense != null" >
-        health_license,
-      </if>
-      <if test="foodCirculationLicense != null" >
-        food_circulation_license,
+      <if test="phone != null" >
+        phone,
       </if>
       <if test="businessLicense != null" >
         business_license,
       </if>
-      <if test="certificateNumber != null" >
-        certificate_number,
+      <if test="hygieneLicense != null" >
+        hygiene_license,
       </if>
-      <if test="authenticationStarttime != null" >
-        authentication_starttime,
-      </if>
-      <if test="validDate != null" >
-        valid_date,
+      <if test="foodCirculationLicense != null" >
+        food_circulation_license,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="enterpriseName != null" >
-        #{enterpriseName,jdbcType=VARCHAR},
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="companyName != null" >
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null" >
+        #{contact,jdbcType=VARCHAR},
       </if>
       <if test="address != null" >
         #{address,jdbcType=VARCHAR},
       </if>
-      <if test="contacts != null" >
-        #{contacts,jdbcType=VARCHAR},
-      </if>
-      <if test="contactPhone != null" >
-        #{contactPhone,jdbcType=VARCHAR},
-      </if>
-      <if test="healthLicense != null" >
-        #{healthLicense,jdbcType=VARCHAR},
-      </if>
-      <if test="foodCirculationLicense != null" >
-        #{foodCirculationLicense,jdbcType=VARCHAR},
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
       </if>
       <if test="businessLicense != null" >
         #{businessLicense,jdbcType=VARCHAR},
       </if>
-      <if test="certificateNumber != null" >
-        #{certificateNumber,jdbcType=BIGINT},
+      <if test="hygieneLicense != null" >
+        #{hygieneLicense,jdbcType=VARCHAR},
       </if>
-      <if test="authenticationStarttime != null" >
-        #{authenticationStarttime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="validDate != null" >
-        #{validDate,jdbcType=DATE},
+      <if test="foodCirculationLicense != null" >
+        #{foodCirculationLicense,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -191,35 +174,29 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update authentication_yaoqi
     <set >
-      <if test="record.enterpriseName != null" >
-        enterprise_name = #{record.enterpriseName,jdbcType=VARCHAR},
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.companyName != null" >
+        company_name = #{record.companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contact != null" >
+        contact = #{record.contact,jdbcType=VARCHAR},
       </if>
       <if test="record.address != null" >
         address = #{record.address,jdbcType=VARCHAR},
       </if>
-      <if test="record.contacts != null" >
-        contacts = #{record.contacts,jdbcType=VARCHAR},
-      </if>
-      <if test="record.contactPhone != null" >
-        contact_phone = #{record.contactPhone,jdbcType=VARCHAR},
-      </if>
-      <if test="record.healthLicense != null" >
-        health_license = #{record.healthLicense,jdbcType=VARCHAR},
-      </if>
-      <if test="record.foodCirculationLicense != null" >
-        food_circulation_license = #{record.foodCirculationLicense,jdbcType=VARCHAR},
+      <if test="record.phone != null" >
+        phone = #{record.phone,jdbcType=VARCHAR},
       </if>
       <if test="record.businessLicense != null" >
         business_license = #{record.businessLicense,jdbcType=VARCHAR},
       </if>
-      <if test="record.certificateNumber != null" >
-        certificate_number = #{record.certificateNumber,jdbcType=BIGINT},
+      <if test="record.hygieneLicense != null" >
+        hygiene_license = #{record.hygieneLicense,jdbcType=VARCHAR},
       </if>
-      <if test="record.authenticationStarttime != null" >
-        authentication_starttime = #{record.authenticationStarttime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.validDate != null" >
-        valid_date = #{record.validDate,jdbcType=DATE},
+      <if test="record.foodCirculationLicense != null" >
+        food_circulation_license = #{record.foodCirculationLicense,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -228,16 +205,14 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update authentication_yaoqi
-    set enterprise_name = #{record.enterpriseName,jdbcType=VARCHAR},
+    set id = #{record.id,jdbcType=INTEGER},
+      company_name = #{record.companyName,jdbcType=VARCHAR},
+      contact = #{record.contact,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
-      contacts = #{record.contacts,jdbcType=VARCHAR},
-      contact_phone = #{record.contactPhone,jdbcType=VARCHAR},
-      health_license = #{record.healthLicense,jdbcType=VARCHAR},
-      food_circulation_license = #{record.foodCirculationLicense,jdbcType=VARCHAR},
+      phone = #{record.phone,jdbcType=VARCHAR},
       business_license = #{record.businessLicense,jdbcType=VARCHAR},
-      certificate_number = #{record.certificateNumber,jdbcType=BIGINT},
-      authentication_starttime = #{record.authenticationStarttime,jdbcType=TIMESTAMP},
-      valid_date = #{record.validDate,jdbcType=DATE}
+      hygiene_license = #{record.hygieneLicense,jdbcType=VARCHAR},
+      food_circulation_license = #{record.foodCirculationLicense,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -245,47 +220,39 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqi" >
     update authentication_yaoqi
     <set >
+      <if test="companyName != null" >
+        company_name = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null" >
+        contact = #{contact,jdbcType=VARCHAR},
+      </if>
       <if test="address != null" >
         address = #{address,jdbcType=VARCHAR},
       </if>
-      <if test="contacts != null" >
-        contacts = #{contacts,jdbcType=VARCHAR},
-      </if>
-      <if test="contactPhone != null" >
-        contact_phone = #{contactPhone,jdbcType=VARCHAR},
-      </if>
-      <if test="healthLicense != null" >
-        health_license = #{healthLicense,jdbcType=VARCHAR},
-      </if>
-      <if test="foodCirculationLicense != null" >
-        food_circulation_license = #{foodCirculationLicense,jdbcType=VARCHAR},
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
       </if>
       <if test="businessLicense != null" >
         business_license = #{businessLicense,jdbcType=VARCHAR},
       </if>
-      <if test="certificateNumber != null" >
-        certificate_number = #{certificateNumber,jdbcType=BIGINT},
+      <if test="hygieneLicense != null" >
+        hygiene_license = #{hygieneLicense,jdbcType=VARCHAR},
       </if>
-      <if test="authenticationStarttime != null" >
-        authentication_starttime = #{authenticationStarttime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="validDate != null" >
-        valid_date = #{validDate,jdbcType=DATE},
+      <if test="foodCirculationLicense != null" >
+        food_circulation_license = #{foodCirculationLicense,jdbcType=VARCHAR},
       </if>
     </set>
-    where enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqi" >
     update authentication_yaoqi
-    set address = #{address,jdbcType=VARCHAR},
-      contacts = #{contacts,jdbcType=VARCHAR},
-      contact_phone = #{contactPhone,jdbcType=VARCHAR},
-      health_license = #{healthLicense,jdbcType=VARCHAR},
-      food_circulation_license = #{foodCirculationLicense,jdbcType=VARCHAR},
+    set company_name = #{companyName,jdbcType=VARCHAR},
+      contact = #{contact,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
       business_license = #{businessLicense,jdbcType=VARCHAR},
-      certificate_number = #{certificateNumber,jdbcType=BIGINT},
-      authentication_starttime = #{authenticationStarttime,jdbcType=TIMESTAMP},
-      valid_date = #{validDate,jdbcType=DATE}
-    where enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
+      hygiene_license = #{hygieneLicense,jdbcType=VARCHAR},
+      food_circulation_license = #{foodCirculationLicense,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

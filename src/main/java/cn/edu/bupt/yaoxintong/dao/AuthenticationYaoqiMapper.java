@@ -10,7 +10,7 @@ public interface AuthenticationYaoqiMapper {
 
     int deleteByExample(AuthenticationYaoqiExample example);
 
-    int deleteByPrimaryKey(String enterpriseName);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(AuthenticationYaoqi record);
 
@@ -18,7 +18,7 @@ public interface AuthenticationYaoqiMapper {
 
     List<AuthenticationYaoqi> selectByExample(AuthenticationYaoqiExample example);
 
-    AuthenticationYaoqi selectByPrimaryKey(String enterpriseName);
+    AuthenticationYaoqi selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") AuthenticationYaoqi record, @Param("example") AuthenticationYaoqiExample example);
 

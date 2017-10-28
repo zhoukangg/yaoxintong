@@ -1,34 +1,44 @@
 package cn.edu.bupt.yaoxintong.pojo;
 
-import java.util.Date;
-
 public class AuthenticationYaoqi {
-    private String enterpriseName;
+    private Integer id;
+
+    private String companyName;
+
+    private String contact;
 
     private String address;
 
-    private String contacts;
-
-    private String contactPhone;
-
-    private String healthLicense;
-
-    private String foodCirculationLicense;
+    private String phone;
 
     private String businessLicense;
 
-    private Long certificateNumber;
+    private String hygieneLicense;
 
-    private Date authenticationStarttime;
+    private String foodCirculationLicense;
 
-    private Date validDate;
-
-    public String getEnterpriseName() {
-        return enterpriseName;
+    public Integer getId() {
+        return id;
     }
 
-    public void setEnterpriseName(String enterpriseName) {
-        this.enterpriseName = enterpriseName == null ? null : enterpriseName.trim();
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName == null ? null : companyName.trim();
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact == null ? null : contact.trim();
     }
 
     public String getAddress() {
@@ -39,36 +49,12 @@ public class AuthenticationYaoqi {
         this.address = address == null ? null : address.trim();
     }
 
-    public String getContacts() {
-        return contacts;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setContacts(String contacts) {
-        this.contacts = contacts == null ? null : contacts.trim();
-    }
-
-    public String getContactPhone() {
-        return contactPhone;
-    }
-
-    public void setContactPhone(String contactPhone) {
-        this.contactPhone = contactPhone == null ? null : contactPhone.trim();
-    }
-
-    public String getHealthLicense() {
-        return healthLicense;
-    }
-
-    public void setHealthLicense(String healthLicense) {
-        this.healthLicense = healthLicense == null ? null : healthLicense.trim();
-    }
-
-    public String getFoodCirculationLicense() {
-        return foodCirculationLicense;
-    }
-
-    public void setFoodCirculationLicense(String foodCirculationLicense) {
-        this.foodCirculationLicense = foodCirculationLicense == null ? null : foodCirculationLicense.trim();
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
     }
 
     public String getBusinessLicense() {
@@ -79,27 +65,19 @@ public class AuthenticationYaoqi {
         this.businessLicense = businessLicense == null ? null : businessLicense.trim();
     }
 
-    public Long getCertificateNumber() {
-        return certificateNumber;
+    public String getHygieneLicense() {
+        return hygieneLicense;
     }
 
-    public void setCertificateNumber(Long certificateNumber) {
-        this.certificateNumber = certificateNumber;
+    public void setHygieneLicense(String hygieneLicense) {
+        this.hygieneLicense = hygieneLicense == null ? null : hygieneLicense.trim();
     }
 
-    public Date getAuthenticationStarttime() {
-        return authenticationStarttime;
+    public String getFoodCirculationLicense() {
+        return foodCirculationLicense;
     }
 
-    public void setAuthenticationStarttime(Date authenticationStarttime) {
-        this.authenticationStarttime = authenticationStarttime;
-    }
-
-    public Date getValidDate() {
-        return validDate;
-    }
-
-    public void setValidDate(Date validDate) {
-        this.validDate = validDate;
+    public void setFoodCirculationLicense(String foodCirculationLicense) {
+        this.foodCirculationLicense = foodCirculationLicense == null ? null : foodCirculationLicense.trim();
     }
 }

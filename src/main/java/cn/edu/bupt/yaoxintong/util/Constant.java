@@ -72,6 +72,20 @@ public class Constant {
 
 	public static final String REASON_TOKEN_IS_INVALIID = "会话已失效";
 
+	public static final String REASON_companyName_IS_NULL = "公司名称为空";
+
+	public static final String REASON_contact_IS_NULL = "联系人为空";
+
+	public static final String REASON_address_IS_NULL = "地址为空";
+
+	public static final String REASON_phone_IS_NULL = "为空";
+
+	public static final String REASON_businessLicense_IS_NULL = "营业执照为空";
+
+	public static final String REASON_hygieneLicense_IS_NULL = "卫生许可证为空";
+
+	public static final String REASON_foodCirculationLicense_IS_NULL = "食品流通许可证为空";
+
 	
 	
 }

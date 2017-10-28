@@ -4,7 +4,16 @@ import cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang;
 import cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqi;
 
 public interface AuthenticationService {
-    AuthenticationYaoqi getAuthenticationYaoqi();
-	AuthenticationDianshang getAuthenticationDianshang();
-	boolean AddAuthenticationDianshang(AuthenticationDianshang dianshang);
+	/**
+	 * 
+	 * @param dianshang
+	 * @return
+	 */
+    boolean addAuthenticationYaoqi(AuthenticationYaoqi dianshang);
+   /**
+    * 
+    * @param dianshang
+    * @return
+    */
+    boolean addAuthenticationDianshang(AuthenticationDianshang dianshang);
 }

@@ -1,34 +1,44 @@
 package cn.edu.bupt.yaoxintong.pojo;
 
-import java.util.Date;
-
 public class AuthenticationDianshang {
-    private String enterpriseName;
+    private Integer id;
+
+    private String corporateName;
+
+    private String contact;
 
     private String address;
 
-    private String contacts;
+    private String phone;
 
-    private String contactPhone;
+    private String icpFilingInformation;
 
-    private String icp;
+    private String idtsqc;
 
-    private String drugTradingLicense;
+    private String dmqmsc;
 
-    private String drugAdministrationLicense;
-
-    private Long certificateNumber;
-
-    private Date authenticationStarttime;
-
-    private Date validDate;
-
-    public String getEnterpriseName() {
-        return enterpriseName;
+    public Integer getId() {
+        return id;
     }
 
-    public void setEnterpriseName(String enterpriseName) {
-        this.enterpriseName = enterpriseName == null ? null : enterpriseName.trim();
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCorporateName() {
+        return corporateName;
+    }
+
+    public void setCorporateName(String corporateName) {
+        this.corporateName = corporateName == null ? null : corporateName.trim();
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact == null ? null : contact.trim();
     }
 
     public String getAddress() {
@@ -39,67 +49,35 @@ public class AuthenticationDianshang {
         this.address = address == null ? null : address.trim();
     }
 
-    public String getContacts() {
-        return contacts;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setContacts(String contacts) {
-        this.contacts = contacts == null ? null : contacts.trim();
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
     }
 
-    public String getContactPhone() {
-        return contactPhone;
+    public String getIcpFilingInformation() {
+        return icpFilingInformation;
     }
 
-    public void setContactPhone(String contactPhone) {
-        this.contactPhone = contactPhone == null ? null : contactPhone.trim();
+    public void setIcpFilingInformation(String icpFilingInformation) {
+        this.icpFilingInformation = icpFilingInformation == null ? null : icpFilingInformation.trim();
     }
 
-    public String getIcp() {
-        return icp;
+    public String getIdtsqc() {
+        return idtsqc;
     }
 
-    public void setIcp(String icp) {
-        this.icp = icp == null ? null : icp.trim();
+    public void setIdtsqc(String idtsqc) {
+        this.idtsqc = idtsqc == null ? null : idtsqc.trim();
     }
 
-    public String getDrugTradingLicense() {
-        return drugTradingLicense;
+    public String getDmqmsc() {
+        return dmqmsc;
     }
 
-    public void setDrugTradingLicense(String drugTradingLicense) {
-        this.drugTradingLicense = drugTradingLicense == null ? null : drugTradingLicense.trim();
-    }
-
-    public String getDrugAdministrationLicense() {
-        return drugAdministrationLicense;
-    }
-
-    public void setDrugAdministrationLicense(String drugAdministrationLicense) {
-        this.drugAdministrationLicense = drugAdministrationLicense == null ? null : drugAdministrationLicense.trim();
-    }
-
-    public Long getCertificateNumber() {
-        return certificateNumber;
-    }
-
-    public void setCertificateNumber(Long certificateNumber) {
-        this.certificateNumber = certificateNumber;
-    }
-
-    public Date getAuthenticationStarttime() {
-        return authenticationStarttime;
-    }
-
-    public void setAuthenticationStarttime(Date authenticationStarttime) {
-        this.authenticationStarttime = authenticationStarttime;
-    }
-
-    public Date getValidDate() {
-        return validDate;
-    }
-
-    public void setValidDate(Date validDate) {
-        this.validDate = validDate;
+    public void setDmqmsc(String dmqmsc) {
+        this.dmqmsc = dmqmsc == null ? null : dmqmsc.trim();
     }
 }

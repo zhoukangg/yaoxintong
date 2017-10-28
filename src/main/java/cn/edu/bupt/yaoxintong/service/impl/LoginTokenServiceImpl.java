@@ -70,7 +70,7 @@ public class LoginTokenServiceImpl implements LoginTokenService {
 			Date current = new Date();
 			System.out.println("过了："+Math.abs(current.getTime() - createTime.getTime()));
 			System.out.println("过了："+Math.abs(current.getTime() - createTime.getTime()) / (1000 *60));
-			if (Math.abs(current.getTime() - createTime.getTime()) / (1000 * 60) >= 1) {
+			if (Math.abs(current.getTime() - createTime.getTime()) / (1000 * 60) >= 10) {
 				loginToken.setStatus(Constant.LOGIN_TOKEN_STATUS_INVALID);
 				loginTokenMapper.updateByPrimaryKey(loginToken);
 				return false;

@@ -101,6 +101,7 @@
         <property name="maxInMemorySize" value="40960"/>
     </bean>
 
-   
+   <!-- 静态资源访问 -->  
+	<mvc:resources location="/images/" mapping="/imgs/**"/>
 
 </beans>

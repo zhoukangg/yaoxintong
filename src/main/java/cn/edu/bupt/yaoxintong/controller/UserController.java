@@ -42,7 +42,7 @@ import cn.edu.bupt.yaoxintong.util.StringUtil;
 @RequestMapping("/user")
 public class UserController {
 
-	private static final Logger logger = Logger.getLogger(UserController.class);
+	private static final Logger logger = Logger.getInstance();
 
 	@Autowired
 	UserService userService;

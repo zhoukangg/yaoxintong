@@ -239,8 +239,7 @@ public class UserController {
 		// 解决Ajax跨域请求问题
 		response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
 		response.setHeader("Access-Control-Allow-Credentials", "true");
-		
-		
+
 		ReturnModel result = new ReturnModel();
 
 		if (StringUtil.isEmpty(token)) {
@@ -249,12 +248,12 @@ public class UserController {
 			return result;
 		}
 
-		if(!loginTokenService.isTokenValid(token)){
+		if (!loginTokenService.isTokenValid(token)) {
 			result.setResult(false);
 			result.setReason(Constant.REASON_TOKEN_IS_INVALIID);
 			return result;
 		}
-		
+
 		LoginToken loginToken = loginTokenService.getLoginTokenByToken(token);
 		if (loginToken != null & Constant.LOGIN_TOKEN_STATUS_VALID.equals(loginToken.getStatus())) {
 			String userId = loginToken.getUserid();
@@ -263,7 +262,9 @@ public class UserController {
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 				List<ContactInformation> contactInformation = contactInformationService.getContactInfomation(userId);
 				UserInfo userinfo = new UserInfo();
-				userinfo.setBirthday(sdf.format(user.getBirthday()));
+				Date birthday = user.getBirthday();
+				if (birthday != null)
+					userinfo.setBirthday(sdf.format(birthday));
 				userinfo.setContactInformation(contactInformation);
 				userinfo.setUser(user);
 				result.setDatum(userinfo);
@@ -289,14 +290,13 @@ public class UserController {
 			HttpServletRequest request) {
 		ReturnModel result = new ReturnModel();
 
-
 		if (StringUtil.isEmpty(token)) {
 			result.setResult(false);
 			result.setReason(Constant.REASON_TOKEN_IS_NULL);
 			return result;
 		}
-		
-		if(!loginTokenService.isTokenValid(token)){
+
+		if (!loginTokenService.isTokenValid(token)) {
 			result.setResult(false);
 			result.setReason(Constant.REASON_TOKEN_IS_INVALIID);
 			return result;
@@ -418,12 +418,12 @@ public class UserController {
 			return result;
 		}
 
-		if(!loginTokenService.isTokenValid(token)){
+		if (!loginTokenService.isTokenValid(token)) {
 			result.setResult(false);
 			result.setReason(Constant.REASON_TOKEN_IS_INVALIID);
 			return result;
 		}
-		
+
 		logger.info("======进入了UserController的/changepassword方法，参数：password = " + password + " new_password:"
 				+ new_password + " token = " + token);
 
@@ -475,12 +475,12 @@ public class UserController {
 			return result;
 		}
 
-		if(!loginTokenService.isTokenValid(token)){
+		if (!loginTokenService.isTokenValid(token)) {
 			result.setResult(false);
 			result.setReason(Constant.REASON_TOKEN_IS_INVALIID);
 			return result;
 		}
-		
+
 		logger.info("======进入了UserController的/logout方法，参数 token = " + token);
 
 		// 解决Ajax跨域请求问题

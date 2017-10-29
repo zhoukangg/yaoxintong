@@ -510,9 +510,10 @@ public class BusinessController {
 	public @ResponseBody String applyAuthenticationTest(MultipartFile file, HttpServletResponse response,
 			HttpServletRequest request) throws Exception {
 		logger.info(file.getOriginalFilename());
+		String url = FileUtil.storeRondom(file, request);
 		// 如果文件不为空，写入上传路径
-		if (FileUtil.storeRondom(file) != null) {
-			return "success";
+		if (url  != null) {
+			return url;
 		} else {
 			return "error";
 		}
@@ -571,7 +572,7 @@ public class BusinessController {
 			result.setReason(Constant.REASON_businessLicense_IS_NULL);
 			return result;
 		} else {
-			String pathBusinessLicense = FileUtil.storeRondom(businessLicense);
+			String pathBusinessLicense = FileUtil.storeRondom(businessLicense, request);
 			if (pathBusinessLicense!= null) {
 				authentication.setBusinessLicense(pathBusinessLicense);
 			} else {
@@ -586,7 +587,7 @@ public class BusinessController {
 			result.setReason(Constant.REASON_hygieneLicense_IS_NULL);
 			return result;
 		} else {
-			String pathHygieneLicense = FileUtil.storeRondom(hygieneLicense);
+			String pathHygieneLicense = FileUtil.storeRondom(hygieneLicense, request);
 			if (pathHygieneLicense!= null) {
 				authentication.setHygieneLicense(pathHygieneLicense);
 			} else {
@@ -601,7 +602,7 @@ public class BusinessController {
 			result.setReason(Constant.REASON_foodCirculationLicense_IS_NULL);
 			return result;
 		} else {
-			String pathfoodCirculationLicense= FileUtil.storeRondom(foodCirculationLicense);
+			String pathfoodCirculationLicense= FileUtil.storeRondom(foodCirculationLicense, request);
 			if (pathfoodCirculationLicense!= null) {
 				authentication.setFoodCirculationLicense(pathfoodCirculationLicense);
 			} else {
@@ -671,7 +672,7 @@ public class BusinessController {
 			result.setReason(Constant.REASON_businessLicense_IS_NULL);
 			return result;
 		} else {
-			String pathicp_filing_information = FileUtil.storeRondom(icp_filing_information);
+			String pathicp_filing_information = FileUtil.storeRondom(icp_filing_information, request);
 			if (pathicp_filing_information!= null) {
 				authentication.setIcpFilingInformation(pathicp_filing_information);
 			} else {
@@ -686,7 +687,7 @@ public class BusinessController {
 			result.setReason(Constant.REASON_hygieneLicense_IS_NULL);
 			return result;
 		} else {
-			String pathidtsqc = FileUtil.storeRondom(idtsqc);
+			String pathidtsqc = FileUtil.storeRondom(idtsqc, request);
 			if (pathidtsqc!= null) {
 				authentication.setIdtsqc(pathidtsqc);
 			} else {
@@ -701,7 +702,7 @@ public class BusinessController {
 			result.setReason(Constant.REASON_foodCirculationLicense_IS_NULL);
 			return result;
 		} else {
-			String pathdmqmsc = FileUtil.storeRondom(dmqmsc);
+			String pathdmqmsc = FileUtil.storeRondom(dmqmsc, request);
 			if (pathdmqmsc!= null) {
 				authentication.setDmqmsc(pathdmqmsc);
 			} else {

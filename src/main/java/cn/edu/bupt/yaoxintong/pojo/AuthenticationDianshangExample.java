@@ -164,6 +164,76 @@ public class AuthenticationDianshangExample {
             return (Criteria) this;
         }
 
+        public Criteria andBusinessIdIsNull() {
+            addCriterion("business_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdIsNotNull() {
+            addCriterion("business_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdEqualTo(String value) {
+            addCriterion("business_id =", value, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdNotEqualTo(String value) {
+            addCriterion("business_id <>", value, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdGreaterThan(String value) {
+            addCriterion("business_id >", value, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdGreaterThanOrEqualTo(String value) {
+            addCriterion("business_id >=", value, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdLessThan(String value) {
+            addCriterion("business_id <", value, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdLessThanOrEqualTo(String value) {
+            addCriterion("business_id <=", value, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdLike(String value) {
+            addCriterion("business_id like", value, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdNotLike(String value) {
+            addCriterion("business_id not like", value, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdIn(List<String> values) {
+            addCriterion("business_id in", values, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdNotIn(List<String> values) {
+            addCriterion("business_id not in", values, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdBetween(String value1, String value2) {
+            addCriterion("business_id between", value1, value2, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdNotBetween(String value1, String value2) {
+            addCriterion("business_id not between", value1, value2, "businessId");
+            return (Criteria) this;
+        }
+
         public Criteria andCorporateNameIsNull() {
             addCriterion("corporate_name is null");
             return (Criteria) this;
@@ -445,72 +515,72 @@ public class AuthenticationDianshangExample {
         }
 
         public Criteria andIcpFilingInformationIsNull() {
-            addCriterion("\"icp_filing_ information\" is null");
+            addCriterion("icp_filing_information is null");
             return (Criteria) this;
         }
 
         public Criteria andIcpFilingInformationIsNotNull() {
-            addCriterion("\"icp_filing_ information\" is not null");
+            addCriterion("icp_filing_information is not null");
             return (Criteria) this;
         }
 
         public Criteria andIcpFilingInformationEqualTo(String value) {
-            addCriterion("\"icp_filing_ information\" =", value, "icpFilingInformation");
+            addCriterion("icp_filing_information =", value, "icpFilingInformation");
             return (Criteria) this;
         }
 
         public Criteria andIcpFilingInformationNotEqualTo(String value) {
-            addCriterion("\"icp_filing_ information\" <>", value, "icpFilingInformation");
+            addCriterion("icp_filing_information <>", value, "icpFilingInformation");
             return (Criteria) this;
         }
 
         public Criteria andIcpFilingInformationGreaterThan(String value) {
-            addCriterion("\"icp_filing_ information\" >", value, "icpFilingInformation");
+            addCriterion("icp_filing_information >", value, "icpFilingInformation");
             return (Criteria) this;
         }
 
         public Criteria andIcpFilingInformationGreaterThanOrEqualTo(String value) {
-            addCriterion("\"icp_filing_ information\" >=", value, "icpFilingInformation");
+            addCriterion("icp_filing_information >=", value, "icpFilingInformation");
             return (Criteria) this;
         }
 
         public Criteria andIcpFilingInformationLessThan(String value) {
-            addCriterion("\"icp_filing_ information\" <", value, "icpFilingInformation");
+            addCriterion("icp_filing_information <", value, "icpFilingInformation");
             return (Criteria) this;
         }
 
         public Criteria andIcpFilingInformationLessThanOrEqualTo(String value) {
-            addCriterion("\"icp_filing_ information\" <=", value, "icpFilingInformation");
+            addCriterion("icp_filing_information <=", value, "icpFilingInformation");
             return (Criteria) this;
         }
 
         public Criteria andIcpFilingInformationLike(String value) {
-            addCriterion("\"icp_filing_ information\" like", value, "icpFilingInformation");
+            addCriterion("icp_filing_information like", value, "icpFilingInformation");
             return (Criteria) this;
         }
 
         public Criteria andIcpFilingInformationNotLike(String value) {
-            addCriterion("\"icp_filing_ information\" not like", value, "icpFilingInformation");
+            addCriterion("icp_filing_information not like", value, "icpFilingInformation");
             return (Criteria) this;
         }
 
         public Criteria andIcpFilingInformationIn(List<String> values) {
-            addCriterion("\"icp_filing_ information\" in", values, "icpFilingInformation");
+            addCriterion("icp_filing_information in", values, "icpFilingInformation");
             return (Criteria) this;
         }
 
         public Criteria andIcpFilingInformationNotIn(List<String> values) {
-            addCriterion("\"icp_filing_ information\" not in", values, "icpFilingInformation");
+            addCriterion("icp_filing_information not in", values, "icpFilingInformation");
             return (Criteria) this;
         }
 
         public Criteria andIcpFilingInformationBetween(String value1, String value2) {
-            addCriterion("\"icp_filing_ information\" between", value1, value2, "icpFilingInformation");
+            addCriterion("icp_filing_information between", value1, value2, "icpFilingInformation");
             return (Criteria) this;
         }
 
         public Criteria andIcpFilingInformationNotBetween(String value1, String value2) {
-            addCriterion("\"icp_filing_ information\" not between", value1, value2, "icpFilingInformation");
+            addCriterion("icp_filing_information not between", value1, value2, "icpFilingInformation");
             return (Criteria) this;
         }
 

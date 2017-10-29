@@ -3,6 +3,8 @@ package cn.edu.bupt.yaoxintong.pojo;
 public class AuthenticationDianshang {
     private Integer id;
 
+    private String businessId;
+
     private String corporateName;
 
     private String contact;
@@ -23,6 +25,14 @@ public class AuthenticationDianshang {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getBusinessId() {
+        return businessId;
+    }
+
+    public void setBusinessId(String businessId) {
+        this.businessId = businessId == null ? null : businessId.trim();
     }
 
     public String getCorporateName() {

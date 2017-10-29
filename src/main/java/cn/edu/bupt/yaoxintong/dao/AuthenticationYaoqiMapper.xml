@@ -3,6 +3,7 @@
 <mapper namespace="cn.edu.bupt.yaoxintong.dao.AuthenticationYaoqiMapper" >
   <resultMap id="BaseResultMap" type="cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqi" >
     <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="business_id" property="businessId" jdbcType="VARCHAR" />
     <result column="company_name" property="companyName" jdbcType="VARCHAR" />
     <result column="contact" property="contact" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
@@ -70,7 +71,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, company_name, contact, address, phone, business_license, hygiene_license, food_circulation_license
+    id, business_id, company_name, contact, address, phone, business_license, hygiene_license, 
+    food_circulation_license
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqiExample" >
     select
@@ -103,18 +105,23 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqi" >
-    insert into authentication_yaoqi (id, company_name, contact, 
-      address, phone, business_license, 
-      hygiene_license, food_circulation_license)
-    values (#{id,jdbcType=INTEGER}, #{companyName,jdbcType=VARCHAR}, #{contact,jdbcType=VARCHAR}, 
-      #{address,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{businessLicense,jdbcType=VARCHAR}, 
-      #{hygieneLicense,jdbcType=VARCHAR}, #{foodCirculationLicense,jdbcType=VARCHAR})
+    insert into authentication_yaoqi (id, business_id, company_name, 
+      contact, address, phone, 
+      business_license, hygiene_license, food_circulation_license
+      )
+    values (#{id,jdbcType=INTEGER}, #{businessId,jdbcType=VARCHAR}, #{companyName,jdbcType=VARCHAR}, 
+      #{contact,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{businessLicense,jdbcType=VARCHAR}, #{hygieneLicense,jdbcType=VARCHAR}, #{foodCirculationLicense,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqi" >
     insert into authentication_yaoqi
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
+      </if>
+      <if test="businessId != null" >
+        business_id,
       </if>
       <if test="companyName != null" >
         company_name,
@@ -141,6 +148,9 @@
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
+      </if>
+      <if test="businessId != null" >
+        #{businessId,jdbcType=VARCHAR},
       </if>
       <if test="companyName != null" >
         #{companyName,jdbcType=VARCHAR},
@@ -177,6 +187,9 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
+      <if test="record.businessId != null" >
+        business_id = #{record.businessId,jdbcType=VARCHAR},
+      </if>
       <if test="record.companyName != null" >
         company_name = #{record.companyName,jdbcType=VARCHAR},
       </if>
@@ -206,6 +219,7 @@
   <update id="updateByExample" parameterType="map" >
     update authentication_yaoqi
     set id = #{record.id,jdbcType=INTEGER},
+      business_id = #{record.businessId,jdbcType=VARCHAR},
       company_name = #{record.companyName,jdbcType=VARCHAR},
       contact = #{record.contact,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
@@ -220,6 +234,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqi" >
     update authentication_yaoqi
     <set >
+      <if test="businessId != null" >
+        business_id = #{businessId,jdbcType=VARCHAR},
+      </if>
       <if test="companyName != null" >
         company_name = #{companyName,jdbcType=VARCHAR},
       </if>
@@ -246,7 +263,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqi" >
     update authentication_yaoqi
-    set company_name = #{companyName,jdbcType=VARCHAR},
+    set business_id = #{businessId,jdbcType=VARCHAR},
+      company_name = #{companyName,jdbcType=VARCHAR},
       contact = #{contact,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},

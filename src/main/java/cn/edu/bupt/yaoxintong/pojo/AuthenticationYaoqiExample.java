@@ -164,6 +164,76 @@ public class AuthenticationYaoqiExample {
             return (Criteria) this;
         }
 
+        public Criteria andBusinessIdIsNull() {
+            addCriterion("business_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdIsNotNull() {
+            addCriterion("business_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdEqualTo(String value) {
+            addCriterion("business_id =", value, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdNotEqualTo(String value) {
+            addCriterion("business_id <>", value, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdGreaterThan(String value) {
+            addCriterion("business_id >", value, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdGreaterThanOrEqualTo(String value) {
+            addCriterion("business_id >=", value, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdLessThan(String value) {
+            addCriterion("business_id <", value, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdLessThanOrEqualTo(String value) {
+            addCriterion("business_id <=", value, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdLike(String value) {
+            addCriterion("business_id like", value, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdNotLike(String value) {
+            addCriterion("business_id not like", value, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdIn(List<String> values) {
+            addCriterion("business_id in", values, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdNotIn(List<String> values) {
+            addCriterion("business_id not in", values, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdBetween(String value1, String value2) {
+            addCriterion("business_id between", value1, value2, "businessId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessIdNotBetween(String value1, String value2) {
+            addCriterion("business_id not between", value1, value2, "businessId");
+            return (Criteria) this;
+        }
+
         public Criteria andCompanyNameIsNull() {
             addCriterion("company_name is null");
             return (Criteria) this;

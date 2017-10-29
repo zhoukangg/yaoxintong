@@ -3,11 +3,12 @@
 <mapper namespace="cn.edu.bupt.yaoxintong.dao.AuthenticationDianshangMapper" >
   <resultMap id="BaseResultMap" type="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang" >
     <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="business_id" property="businessId" jdbcType="VARCHAR" />
     <result column="corporate_name" property="corporateName" jdbcType="VARCHAR" />
     <result column="contact" property="contact" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
-    <result column="icp_filing_ information" property="icpFilingInformation" jdbcType="VARCHAR" />
+    <result column="icp_filing_information" property="icpFilingInformation" jdbcType="VARCHAR" />
     <result column="idtsqc" property="idtsqc" jdbcType="VARCHAR" />
     <result column="dmqmsc" property="dmqmsc" jdbcType="VARCHAR" />
   </resultMap>
@@ -70,7 +71,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, corporate_name, contact, address, phone, "icp_filing_ information", idtsqc, dmqmsc
+    id, business_id, corporate_name, contact, address, phone, icp_filing_information, 
+    idtsqc, dmqmsc
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshangExample" >
     select
@@ -103,18 +105,23 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang" >
-    insert into authentication_dianshang (id, corporate_name, contact, 
-      address, phone, "icp_filing_ information", 
-      idtsqc, dmqmsc)
-    values (#{id,jdbcType=INTEGER}, #{corporateName,jdbcType=VARCHAR}, #{contact,jdbcType=VARCHAR}, 
-      #{address,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{icpFilingInformation,jdbcType=VARCHAR}, 
-      #{idtsqc,jdbcType=VARCHAR}, #{dmqmsc,jdbcType=VARCHAR})
+    insert into authentication_dianshang (id, business_id, corporate_name, 
+      contact, address, phone, 
+      icp_filing_information, idtsqc, dmqmsc
+      )
+    values (#{id,jdbcType=INTEGER}, #{businessId,jdbcType=VARCHAR}, #{corporateName,jdbcType=VARCHAR}, 
+      #{contact,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{icpFilingInformation,jdbcType=VARCHAR}, #{idtsqc,jdbcType=VARCHAR}, #{dmqmsc,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang" >
     insert into authentication_dianshang
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
+      </if>
+      <if test="businessId != null" >
+        business_id,
       </if>
       <if test="corporateName != null" >
         corporate_name,
@@ -129,7 +136,7 @@
         phone,
       </if>
       <if test="icpFilingInformation != null" >
-        "icp_filing_ information",
+        icp_filing_information,
       </if>
       <if test="idtsqc != null" >
         idtsqc,
@@ -141,6 +148,9 @@
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
+      </if>
+      <if test="businessId != null" >
+        #{businessId,jdbcType=VARCHAR},
       </if>
       <if test="corporateName != null" >
         #{corporateName,jdbcType=VARCHAR},
@@ -177,6 +187,9 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
+      <if test="record.businessId != null" >
+        business_id = #{record.businessId,jdbcType=VARCHAR},
+      </if>
       <if test="record.corporateName != null" >
         corporate_name = #{record.corporateName,jdbcType=VARCHAR},
       </if>
@@ -190,7 +203,7 @@
         phone = #{record.phone,jdbcType=VARCHAR},
       </if>
       <if test="record.icpFilingInformation != null" >
-        "icp_filing_ information" = #{record.icpFilingInformation,jdbcType=VARCHAR},
+        icp_filing_information = #{record.icpFilingInformation,jdbcType=VARCHAR},
       </if>
       <if test="record.idtsqc != null" >
         idtsqc = #{record.idtsqc,jdbcType=VARCHAR},
@@ -206,11 +219,12 @@
   <update id="updateByExample" parameterType="map" >
     update authentication_dianshang
     set id = #{record.id,jdbcType=INTEGER},
+      business_id = #{record.businessId,jdbcType=VARCHAR},
       corporate_name = #{record.corporateName,jdbcType=VARCHAR},
       contact = #{record.contact,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
       phone = #{record.phone,jdbcType=VARCHAR},
-      "icp_filing_ information" = #{record.icpFilingInformation,jdbcType=VARCHAR},
+      icp_filing_information = #{record.icpFilingInformation,jdbcType=VARCHAR},
       idtsqc = #{record.idtsqc,jdbcType=VARCHAR},
       dmqmsc = #{record.dmqmsc,jdbcType=VARCHAR}
     <if test="_parameter != null" >
@@ -220,6 +234,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang" >
     update authentication_dianshang
     <set >
+      <if test="businessId != null" >
+        business_id = #{businessId,jdbcType=VARCHAR},
+      </if>
       <if test="corporateName != null" >
         corporate_name = #{corporateName,jdbcType=VARCHAR},
       </if>
@@ -233,7 +250,7 @@
         phone = #{phone,jdbcType=VARCHAR},
       </if>
       <if test="icpFilingInformation != null" >
-        "icp_filing_ information" = #{icpFilingInformation,jdbcType=VARCHAR},
+        icp_filing_information = #{icpFilingInformation,jdbcType=VARCHAR},
       </if>
       <if test="idtsqc != null" >
         idtsqc = #{idtsqc,jdbcType=VARCHAR},
@@ -246,11 +263,12 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang" >
     update authentication_dianshang
-    set corporate_name = #{corporateName,jdbcType=VARCHAR},
+    set business_id = #{businessId,jdbcType=VARCHAR},
+      corporate_name = #{corporateName,jdbcType=VARCHAR},
       contact = #{contact,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
-      "icp_filing_ information" = #{icpFilingInformation,jdbcType=VARCHAR},
+      icp_filing_information = #{icpFilingInformation,jdbcType=VARCHAR},
       idtsqc = #{idtsqc,jdbcType=VARCHAR},
       dmqmsc = #{dmqmsc,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}

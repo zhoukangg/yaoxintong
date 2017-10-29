@@ -420,6 +420,12 @@ public class BusinessController {
 		logger.info("======进入了BusinessController的/changepassword方法，参数：password = " + password + " new_password:"
 				+ new_password + " token = " + token);
 
+		if (!loginTokenService.isTokenValid(token)) {
+			result.setResult(false);
+			result.setReason(Constant.REASON_TOKEN_IS_INVALIID);
+			return result;
+		}
+
 		// 解决Ajax跨域请求问题
 		response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
 		response.setHeader("Access-Control-Allow-Credentials", "true");
@@ -468,6 +474,11 @@ public class BusinessController {
 			return result;
 		}
 
+		if (!loginTokenService.isTokenValid(token)) {
+			result.setResult(true);
+			return result;
+		}
+
 		logger.info("======进入了BusinessController的/logout方法，参数 token = " + token);
 
 		// 解决Ajax跨域请求问题
@@ -512,7 +523,7 @@ public class BusinessController {
 		logger.info(file.getOriginalFilename());
 		String url = FileUtil.storeRondom(file, request);
 		// 如果文件不为空，写入上传路径
-		if (url  != null) {
+		if (url != null) {
 			return url;
 		} else {
 			return "error";
@@ -533,97 +544,116 @@ public class BusinessController {
 		}
 		logger.info("======进入了BusinessController的/logout方法，参数 token = " + token);
 
-		AuthenticationYaoqi authentication = new AuthenticationYaoqi();
+		LoginToken loginToken = loginTokenService.getLoginTokenByToken(token);
+		logger.info("loginToken:" + loginToken);
+		if (loginToken != null & Constant.LOGIN_TOKEN_STATUS_VALID.equals(loginToken.getStatus())) {
+			logger.info("loginToken.getUserid():" + loginToken.getUserid());
+			YaoxintongBusiness user = BusinessService.getUser(loginToken.getUserid());
 
-		if (StringUtil.isEmpty(companyName)) {
-			result.setResult(false);
-			result.setReason(Constant.REASON_companyName_IS_NULL);
-			return result;
-		} else {
-			authentication.setCompanyName(companyName);
-		}
+			if (user != null) {
+				AuthenticationYaoqi authentication = new AuthenticationYaoqi();
+				String businessId = user.getId();
+				authentication.setBusinessId(businessId);
+				if (StringUtil.isEmpty(companyName)) {
+					result.setResult(false);
+					result.setReason(Constant.REASON_companyName_IS_NULL);
+					return result;
+				} else {
+					authentication.setCompanyName(companyName);
+				}
 
-		if (StringUtil.isEmpty(contact)) {
-			result.setResult(false);
-			result.setReason(Constant.REASON_contact_IS_NULL);
-			return result;
-		} else {
-			authentication.setContact(contact);
-		}
+				if (StringUtil.isEmpty(contact)) {
+					result.setResult(false);
+					result.setReason(Constant.REASON_contact_IS_NULL);
+					return result;
+				} else {
+					authentication.setContact(contact);
+				}
 
-		if (StringUtil.isEmpty(address)) {
-			result.setResult(false);
-			result.setReason(Constant.REASON_address_IS_NULL);
-			return result;
-		} else {
-			authentication.setAddress(address);
-		}
+				if (StringUtil.isEmpty(address)) {
+					result.setResult(false);
+					result.setReason(Constant.REASON_address_IS_NULL);
+					return result;
+				} else {
+					authentication.setAddress(address);
+				}
 
-		if (StringUtil.isEmpty(phone)) {
-			result.setResult(false);
-			result.setReason(Constant.REASON_phone_IS_NULL);
-			return result;
-		} else {
-			authentication.setPhone(phone);
-		}
+				if (StringUtil.isEmpty(phone)) {
+					result.setResult(false);
+					result.setReason(Constant.REASON_phone_IS_NULL);
+					return result;
+				} else {
+					authentication.setPhone(phone);
+				}
 
-		if (businessLicense.isEmpty()) {
-			result.setResult(false);
-			result.setReason(Constant.REASON_businessLicense_IS_NULL);
-			return result;
-		} else {
-			String pathBusinessLicense = FileUtil.storeRondom(businessLicense, request);
-			if (pathBusinessLicense!= null) {
-				authentication.setBusinessLicense(pathBusinessLicense);
+				if (businessLicense.isEmpty()) {
+					result.setResult(false);
+					result.setReason(Constant.REASON_businessLicense_IS_NULL);
+					return result;
+				} else {
+					String pathBusinessLicense = FileUtil.storeRondom(businessLicense, request);
+					if (pathBusinessLicense != null) {
+						authentication.setBusinessLicense(pathBusinessLicense);
+					} else {
+						result.setResult(false);
+						result.setReason(Constant.REASON_UNKNOW);
+						return result;
+					}
+				}
+
+				if (hygieneLicense.isEmpty()) {
+					result.setResult(false);
+					result.setReason(Constant.REASON_hygieneLicense_IS_NULL);
+					return result;
+				} else {
+					String pathHygieneLicense = FileUtil.storeRondom(hygieneLicense, request);
+					if (pathHygieneLicense != null) {
+						authentication.setHygieneLicense(pathHygieneLicense);
+					} else {
+						result.setResult(false);
+						result.setReason(Constant.REASON_UNKNOW);
+						return result;
+					}
+				}
+
+				if (foodCirculationLicense.isEmpty()) {
+					result.setResult(false);
+					result.setReason(Constant.REASON_foodCirculationLicense_IS_NULL);
+					return result;
+				} else {
+					String pathfoodCirculationLicense = FileUtil.storeRondom(foodCirculationLicense, request);
+					if (pathfoodCirculationLicense != null) {
+						authentication.setFoodCirculationLicense(pathfoodCirculationLicense);
+					} else {
+						result.setResult(false);
+						result.setReason(Constant.REASON_UNKNOW);
+						return result;
+					}
+				}
+
+				if (authenticationService.addAuthenticationYaoqi(authentication)) {
+					result.setResult(true);
+				} else {
+					result.setResult(false);
+				}
 			} else {
 				result.setResult(false);
-				result.setReason(Constant.REASON_UNKNOW);
+				result.setReason(Constant.REASON_USER_NOT_EXIST);
 				return result;
 			}
-		}
-
-		if (hygieneLicense.isEmpty()) {
-			result.setResult(false);
-			result.setReason(Constant.REASON_hygieneLicense_IS_NULL);
-			return result;
 		} else {
-			String pathHygieneLicense = FileUtil.storeRondom(hygieneLicense, request);
-			if (pathHygieneLicense!= null) {
-				authentication.setHygieneLicense(pathHygieneLicense);
-			} else {
-				result.setResult(false);
-				result.setReason(Constant.REASON_UNKNOW);
-				return result;
-			}
-		}
-
-		if (foodCirculationLicense.isEmpty()) {
 			result.setResult(false);
-			result.setReason(Constant.REASON_foodCirculationLicense_IS_NULL);
+			result.setReason(Constant.REASON_LOGIN_TOKEN_NOT_EXIST);
 			return result;
-		} else {
-			String pathfoodCirculationLicense= FileUtil.storeRondom(foodCirculationLicense, request);
-			if (pathfoodCirculationLicense!= null) {
-				authentication.setFoodCirculationLicense(pathfoodCirculationLicense);
-			} else {
-				result.setResult(false);
-				result.setReason(Constant.REASON_UNKNOW);
-				return result;
-			}
-		}
-		
-		if(authenticationService.addAuthenticationYaoqi(authentication)) {
-			result.setResult(true);
-		}else {
-			result.setResult(false);
 		}
 
 		return result;
 	}
 
 	@RequestMapping(value = "/applyAuthentication/dianshang", method = RequestMethod.POST)
-	public @ResponseBody ReturnModel applyAuthentication2(String token,
-			HttpServletResponse response, HttpServletRequest request, String corporateName, String contact, String address, String phone, MultipartFile icp_filing_information, MultipartFile idtsqc, MultipartFile dmqmsc) throws Exception {
+	public @ResponseBody ReturnModel applyAuthentication2(String token, HttpServletResponse response,
+			HttpServletRequest request, String corporateName, String contact, String address, String phone,
+			MultipartFile icp_filing_information, MultipartFile idtsqc, MultipartFile dmqmsc) throws Exception {
 		ReturnModel result = new ReturnModel();
 
 		if (StringUtil.isEmpty(token)) {
@@ -633,89 +663,107 @@ public class BusinessController {
 		}
 		logger.info("======进入了BusinessController的/logout方法，参数 token = " + token);
 
-		AuthenticationDianshang authentication = new AuthenticationDianshang();
+		LoginToken loginToken = loginTokenService.getLoginTokenByToken(token);
+		logger.info("loginToken:" + loginToken);
+		if (loginToken != null & Constant.LOGIN_TOKEN_STATUS_VALID.equals(loginToken.getStatus())) {
+			logger.info("loginToken.getUserid():" + loginToken.getUserid());
+			YaoxintongBusiness user = BusinessService.getUser(loginToken.getUserid());
 
-		if (StringUtil.isEmpty(corporateName)) {
-			result.setResult(false);
-			result.setReason(Constant.REASON_companyName_IS_NULL);
-			return result;
-		} else {
-			authentication.setCorporateName(corporateName);
-		}
+			if (user != null) {
+				AuthenticationDianshang authentication = new AuthenticationDianshang();
+				String businessId = user.getId();
+				authentication.setBusinessId(businessId);
+				if (StringUtil.isEmpty(corporateName)) {
+					result.setResult(false);
+					result.setReason(Constant.REASON_companyName_IS_NULL);
+					return result;
+				} else {
+					authentication.setCorporateName(corporateName);
+				}
 
-		if (StringUtil.isEmpty(contact)) {
-			result.setResult(false);
-			result.setReason(Constant.REASON_contact_IS_NULL);
-			return result;
-		} else {
-			authentication.setContact(contact);
-		}
+				if (StringUtil.isEmpty(contact)) {
+					result.setResult(false);
+					result.setReason(Constant.REASON_contact_IS_NULL);
+					return result;
+				} else {
+					authentication.setContact(contact);
+				}
 
-		if (StringUtil.isEmpty(address)) {
-			result.setResult(false);
-			result.setReason(Constant.REASON_address_IS_NULL);
-			return result;
-		} else {
-			authentication.setDmqmsc(address);
-		}
+				if (StringUtil.isEmpty(address)) {
+					result.setResult(false);
+					result.setReason(Constant.REASON_address_IS_NULL);
+					return result;
+				} else {
+					authentication.setDmqmsc(address);
+				}
 
-		if (StringUtil.isEmpty(phone)) {
-			result.setResult(false);
-			result.setReason(Constant.REASON_phone_IS_NULL);
-			return result;
-		} else {
-			authentication.setPhone(phone);
-		}
+				if (StringUtil.isEmpty(phone)) {
+					result.setResult(false);
+					result.setReason(Constant.REASON_phone_IS_NULL);
+					return result;
+				} else {
+					authentication.setPhone(phone);
+				}
 
-		if (icp_filing_information.isEmpty()) {
-			result.setResult(false);
-			result.setReason(Constant.REASON_businessLicense_IS_NULL);
-			return result;
-		} else {
-			String pathicp_filing_information = FileUtil.storeRondom(icp_filing_information, request);
-			if (pathicp_filing_information!= null) {
-				authentication.setIcpFilingInformation(pathicp_filing_information);
+				if (icp_filing_information.isEmpty()) {
+					result.setResult(false);
+					result.setReason(Constant.REASON_businessLicense_IS_NULL);
+					return result;
+				} else {
+					String pathicp_filing_information = FileUtil.storeRondom(icp_filing_information, request);
+					if (pathicp_filing_information != null) {
+						authentication.setIcpFilingInformation(pathicp_filing_information);
+					} else {
+						result.setResult(false);
+						result.setReason(Constant.REASON_UNKNOW);
+						return result;
+					}
+				}
+
+				if (idtsqc.isEmpty()) {
+					result.setResult(false);
+					result.setReason(Constant.REASON_hygieneLicense_IS_NULL);
+					return result;
+				} else {
+					String pathidtsqc = FileUtil.storeRondom(idtsqc, request);
+					if (pathidtsqc != null) {
+						authentication.setIdtsqc(pathidtsqc);
+					} else {
+						result.setResult(false);
+						result.setReason(Constant.REASON_UNKNOW);
+						return result;
+					}
+				}
+
+				if (dmqmsc.isEmpty()) {
+					result.setResult(false);
+					result.setReason(Constant.REASON_foodCirculationLicense_IS_NULL);
+					return result;
+				} else {
+					String pathdmqmsc = FileUtil.storeRondom(dmqmsc, request);
+					if (pathdmqmsc != null) {
+						authentication.setDmqmsc(pathdmqmsc);
+					} else {
+						result.setResult(false);
+						result.setReason(Constant.REASON_UNKNOW);
+						return result;
+					}
+				}
+
+				if (authenticationService.addAuthenticationDianshang(authentication)) {
+					result.setResult(true);
+				} else {
+					result.setResult(false);
+				}
 			} else {
 				result.setResult(false);
-				result.setReason(Constant.REASON_UNKNOW);
+				result.setReason(Constant.REASON_USER_NOT_EXIST);
 				return result;
 			}
-		}
-
-		if (idtsqc.isEmpty()) {
-			result.setResult(false);
-			result.setReason(Constant.REASON_hygieneLicense_IS_NULL);
-			return result;
 		} else {
-			String pathidtsqc = FileUtil.storeRondom(idtsqc, request);
-			if (pathidtsqc!= null) {
-				authentication.setIdtsqc(pathidtsqc);
-			} else {
-				result.setResult(false);
-				result.setReason(Constant.REASON_UNKNOW);
-				return result;
-			}
-		}
-
-		if (dmqmsc.isEmpty()) {
 			result.setResult(false);
-			result.setReason(Constant.REASON_foodCirculationLicense_IS_NULL);
+			result.setReason(Constant.REASON_LOGIN_TOKEN_NOT_EXIST);
 			return result;
-		} else {
-			String pathdmqmsc = FileUtil.storeRondom(dmqmsc, request);
-			if (pathdmqmsc!= null) {
-				authentication.setDmqmsc(pathdmqmsc);
-			} else {
-				result.setResult(false);
-				result.setReason(Constant.REASON_UNKNOW);
-				return result;
-			}
-		}
-		
-		if(authenticationService.addAuthenticationDianshang(authentication)) {
-			result.setResult(true);
-		}else {
-			result.setResult(false);
 		}
 
 		return result;

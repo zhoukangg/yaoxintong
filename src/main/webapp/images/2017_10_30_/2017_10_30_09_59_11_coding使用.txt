@@ -1,0 +1,16 @@
+情况一：
+   已有本地项目，需要把它托管到远程，在coding创建一个仓库
+
+1. 首先初始化： git init
+2. 把代码提交至本地仓库，因为要生成分支，后面要与远程仓库的分支关联：
+    git add  ||  git commit -m "说明"
+3. 与远程仓库关联： git remote add origin https://git.coding.net/ZENG_KE/Test.git
+4. 此时可查看远程仓库地址： git remote -v
+5. 把本地分支与远程分支关联：git pull  ||   git branch -set-upstream-to=origin/master master
+6. 把远程仓库的东西先拉取下来：git pull origin master -allow-unrelated-histories(将两个不同的项目合并)||git pull
+7. 最后把本地仓库的代码push到远程仓库中： git push origin master
+
+情况二:
+   已有远程仓库，通过远程仓库去clone到本地，生成本地仓库
+
+   git clone https://git.coding.net/ZENG_KE/Me.git

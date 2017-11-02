@@ -34,15 +34,16 @@ public class FileUtil {
 		return false;
 	}
 
-	public static String storeRondom(MultipartFile file, HttpServletRequest request) throws IllegalStateException, IOException {
+	public static String storeImgRondom(MultipartFile file, HttpServletRequest request) throws IllegalStateException, IOException {
 		Date currentTime = new Date();
 		SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss_");
 		String times = formatter1.format(currentTime);
 		String filename = times+file.getOriginalFilename();
 		SimpleDateFormat formatter2 = new SimpleDateFormat("yyyy_MM_dd_");
 		String pathtimes = formatter2.format(currentTime);
+		String url = "/imgs/"+pathtimes+"/"+filename;
 		String path = request.getServletContext().getRealPath("/images/"+pathtimes+"/");
-		String url = path+filename;
+		logger.info("url--->"+url);
 		return FileUtil.store(file, path, filename)?url:null;
 	}
 }

@@ -19,6 +19,8 @@ public class AuthenticationDianshang {
 
     private String dmqmsc;
 
+    private String status;
+
     public Integer getId() {
         return id;
     }
@@ -89,5 +91,13 @@ public class AuthenticationDianshang {
 
     public void setDmqmsc(String dmqmsc) {
         this.dmqmsc = dmqmsc == null ? null : dmqmsc.trim();
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status == null ? null : status.trim();
     }
 }

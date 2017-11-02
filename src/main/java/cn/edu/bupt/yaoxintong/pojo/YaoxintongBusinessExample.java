@@ -342,6 +342,76 @@ public class YaoxintongBusinessExample {
             return (Criteria) this;
         }
 
+        public Criteria andBusinessScopeIsNull() {
+            addCriterion("business_scope is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessScopeIsNotNull() {
+            addCriterion("business_scope is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessScopeEqualTo(String value) {
+            addCriterion("business_scope =", value, "businessScope");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessScopeNotEqualTo(String value) {
+            addCriterion("business_scope <>", value, "businessScope");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessScopeGreaterThan(String value) {
+            addCriterion("business_scope >", value, "businessScope");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessScopeGreaterThanOrEqualTo(String value) {
+            addCriterion("business_scope >=", value, "businessScope");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessScopeLessThan(String value) {
+            addCriterion("business_scope <", value, "businessScope");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessScopeLessThanOrEqualTo(String value) {
+            addCriterion("business_scope <=", value, "businessScope");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessScopeLike(String value) {
+            addCriterion("business_scope like", value, "businessScope");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessScopeNotLike(String value) {
+            addCriterion("business_scope not like", value, "businessScope");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessScopeIn(List<String> values) {
+            addCriterion("business_scope in", values, "businessScope");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessScopeNotIn(List<String> values) {
+            addCriterion("business_scope not in", values, "businessScope");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessScopeBetween(String value1, String value2) {
+            addCriterion("business_scope between", value1, value2, "businessScope");
+            return (Criteria) this;
+        }
+
+        public Criteria andBusinessScopeNotBetween(String value1, String value2) {
+            addCriterion("business_scope not between", value1, value2, "businessScope");
+            return (Criteria) this;
+        }
+
         public Criteria andBusinessTypeIsNull() {
             addCriterion("business_type is null");
             return (Criteria) this;

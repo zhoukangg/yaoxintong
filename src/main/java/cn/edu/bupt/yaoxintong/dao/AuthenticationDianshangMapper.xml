@@ -11,6 +11,7 @@
     <result column="icp_filing_information" property="icpFilingInformation" jdbcType="VARCHAR" />
     <result column="idtsqc" property="idtsqc" jdbcType="VARCHAR" />
     <result column="dmqmsc" property="dmqmsc" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="CHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -72,7 +73,7 @@
   </sql>
   <sql id="Base_Column_List" >
     id, business_id, corporate_name, contact, address, phone, icp_filing_information, 
-    idtsqc, dmqmsc
+    idtsqc, dmqmsc, status
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshangExample" >
     select
@@ -107,12 +108,12 @@
   <insert id="insert" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang" >
     insert into authentication_dianshang (id, business_id, corporate_name, 
       contact, address, phone, 
-      icp_filing_information, idtsqc, dmqmsc
-      )
+      icp_filing_information, idtsqc, dmqmsc, 
+      status)
     values (#{id,jdbcType=INTEGER}, #{businessId,jdbcType=VARCHAR}, #{corporateName,jdbcType=VARCHAR}, 
       #{contact,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
-      #{icpFilingInformation,jdbcType=VARCHAR}, #{idtsqc,jdbcType=VARCHAR}, #{dmqmsc,jdbcType=VARCHAR}
-      )
+      #{icpFilingInformation,jdbcType=VARCHAR}, #{idtsqc,jdbcType=VARCHAR}, #{dmqmsc,jdbcType=VARCHAR}, 
+      #{status,jdbcType=CHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang" >
     insert into authentication_dianshang
@@ -144,6 +145,9 @@
       <if test="dmqmsc != null" >
         dmqmsc,
       </if>
+      <if test="status != null" >
+        status,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -172,6 +176,9 @@
       </if>
       <if test="dmqmsc != null" >
         #{dmqmsc,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=CHAR},
       </if>
     </trim>
   </insert>
@@ -211,6 +218,9 @@
       <if test="record.dmqmsc != null" >
         dmqmsc = #{record.dmqmsc,jdbcType=VARCHAR},
       </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=CHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -226,7 +236,8 @@
       phone = #{record.phone,jdbcType=VARCHAR},
       icp_filing_information = #{record.icpFilingInformation,jdbcType=VARCHAR},
       idtsqc = #{record.idtsqc,jdbcType=VARCHAR},
-      dmqmsc = #{record.dmqmsc,jdbcType=VARCHAR}
+      dmqmsc = #{record.dmqmsc,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=CHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -258,6 +269,9 @@
       <if test="dmqmsc != null" >
         dmqmsc = #{dmqmsc,jdbcType=VARCHAR},
       </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=CHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -270,7 +284,8 @@
       phone = #{phone,jdbcType=VARCHAR},
       icp_filing_information = #{icpFilingInformation,jdbcType=VARCHAR},
       idtsqc = #{idtsqc,jdbcType=VARCHAR},
-      dmqmsc = #{dmqmsc,jdbcType=VARCHAR}
+      dmqmsc = #{dmqmsc,jdbcType=VARCHAR},
+      status = #{status,jdbcType=CHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

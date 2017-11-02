@@ -5,6 +5,7 @@
     <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="business_name" property="businessName" jdbcType="VARCHAR" />
+    <result column="business_scope" property="businessScope" jdbcType="VARCHAR" />
     <result column="business_type" property="businessType" jdbcType="CHAR" />
     <result column="contact" property="contact" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
@@ -73,8 +74,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, username, business_name, business_type, contact, password, salt, sex, status, 
-    register_time, openid
+    id, username, business_name, business_scope, business_type, contact, password, salt, 
+    sex, status, register_time, openid
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.edu.bupt.yaoxintong.pojo.YaoxintongBusinessExample" >
     select
@@ -108,13 +109,13 @@
   </delete>
   <insert id="insert" parameterType="cn.edu.bupt.yaoxintong.pojo.YaoxintongBusiness" >
     insert into yaoxintong_business (id, username, business_name, 
-      business_type, contact, password, 
-      salt, sex, status, register_time, 
-      openid)
+      business_scope, business_type, contact, 
+      password, salt, sex, status, 
+      register_time, openid)
     values (#{id,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{businessName,jdbcType=VARCHAR}, 
-      #{businessType,jdbcType=CHAR}, #{contact,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{salt,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{status,jdbcType=VARCHAR}, #{registerTime,jdbcType=DATE}, 
-      #{openid,jdbcType=VARCHAR})
+      #{businessScope,jdbcType=VARCHAR}, #{businessType,jdbcType=CHAR}, #{contact,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{status,jdbcType=VARCHAR}, 
+      #{registerTime,jdbcType=DATE}, #{openid,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.edu.bupt.yaoxintong.pojo.YaoxintongBusiness" >
     insert into yaoxintong_business
@@ -127,6 +128,9 @@
       </if>
       <if test="businessName != null" >
         business_name,
+      </if>
+      <if test="businessScope != null" >
+        business_scope,
       </if>
       <if test="businessType != null" >
         business_type,
@@ -162,6 +166,9 @@
       </if>
       <if test="businessName != null" >
         #{businessName,jdbcType=VARCHAR},
+      </if>
+      <if test="businessScope != null" >
+        #{businessScope,jdbcType=VARCHAR},
       </if>
       <if test="businessType != null" >
         #{businessType,jdbcType=CHAR},
@@ -207,6 +214,9 @@
       <if test="record.businessName != null" >
         business_name = #{record.businessName,jdbcType=VARCHAR},
       </if>
+      <if test="record.businessScope != null" >
+        business_scope = #{record.businessScope,jdbcType=VARCHAR},
+      </if>
       <if test="record.businessType != null" >
         business_type = #{record.businessType,jdbcType=CHAR},
       </if>
@@ -241,6 +251,7 @@
     set id = #{record.id,jdbcType=VARCHAR},
       username = #{record.username,jdbcType=VARCHAR},
       business_name = #{record.businessName,jdbcType=VARCHAR},
+      business_scope = #{record.businessScope,jdbcType=VARCHAR},
       business_type = #{record.businessType,jdbcType=CHAR},
       contact = #{record.contact,jdbcType=VARCHAR},
       password = #{record.password,jdbcType=VARCHAR},
@@ -261,6 +272,9 @@
       </if>
       <if test="businessName != null" >
         business_name = #{businessName,jdbcType=VARCHAR},
+      </if>
+      <if test="businessScope != null" >
+        business_scope = #{businessScope,jdbcType=VARCHAR},
       </if>
       <if test="businessType != null" >
         business_type = #{businessType,jdbcType=CHAR},
@@ -293,6 +307,7 @@
     update yaoxintong_business
     set username = #{username,jdbcType=VARCHAR},
       business_name = #{businessName,jdbcType=VARCHAR},
+      business_scope = #{businessScope,jdbcType=VARCHAR},
       business_type = #{businessType,jdbcType=CHAR},
       contact = #{contact,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},

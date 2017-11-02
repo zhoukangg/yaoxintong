@@ -9,6 +9,8 @@ public class YaoxintongBusiness {
 
     private String businessName;
 
+    private String businessScope;
+
     private String businessType;
 
     private String contact;
@@ -47,6 +49,14 @@ public class YaoxintongBusiness {
 
     public void setBusinessName(String businessName) {
         this.businessName = businessName == null ? null : businessName.trim();
+    }
+
+    public String getBusinessScope() {
+        return businessScope;
+    }
+
+    public void setBusinessScope(String businessScope) {
+        this.businessScope = businessScope == null ? null : businessScope.trim();
     }
 
     public String getBusinessType() {

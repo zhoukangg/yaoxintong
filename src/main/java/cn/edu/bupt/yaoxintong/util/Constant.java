@@ -9,14 +9,13 @@ public class Constant {
 	
 	public static final boolean DEBUG = true;
 
-	public static final String CONTACT_TYPE_EMAIL = "emial";
-	public static final String CONTACT_TYPE_PHONE = "phone";
 
 	public static final String CONTACT_INFO_TYPE_EMAIL = "email";
 
 	public static final String CONTACT_INFO_TYPE_PHONE = "phone";
 	public static final String STRING_TRUE = "true";
 	public static final String STRING_FALSE = "false";
+	
 	public static final String CONTACTTYPE_USER = "0";
 
 	public static final String CONTACTTYPE_BUSINESS="1";
@@ -85,6 +84,18 @@ public class Constant {
 	public static final String REASON_hygieneLicense_IS_NULL = "卫生许可证为空";
 
 	public static final String REASON_foodCirculationLicense_IS_NULL = "食品流通许可证为空";
+
+
+	public static final String RELATION_SALE = "sale";
+
+
+	public static final String RELATION_PRO = "生产";
+
+
+	public static final String RELATION_XIANGSI_GONGNENG = "相似功能";
+
+
+	public static final String REASON_FILE_UPLOAD_FAILED = "文件上传失败";
 
 	
 	

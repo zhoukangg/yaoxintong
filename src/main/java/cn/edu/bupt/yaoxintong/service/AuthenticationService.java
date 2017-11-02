@@ -1,5 +1,7 @@
 package cn.edu.bupt.yaoxintong.service;
 
+import java.util.List;
+
 import cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang;
 import cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqi;
 
@@ -16,4 +18,14 @@ public interface AuthenticationService {
     * @return
     */
     boolean addAuthenticationDianshang(AuthenticationDianshang dianshang);
+    /**
+     * 
+     * @param id
+     */
+	List<AuthenticationYaoqi> getAuthenticationYaoqiByBusinessId(String id);
+	/**
+     * 
+     * @param id
+     */
+	List<AuthenticationDianshang> getAuthenticationDianshangByBusinessId(String id);
 }

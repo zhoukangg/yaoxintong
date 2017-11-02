@@ -19,6 +19,8 @@ public class AuthenticationYaoqi {
 
     private String foodCirculationLicense;
 
+    private String status;
+
     public Integer getId() {
         return id;
     }
@@ -89,5 +91,13 @@ public class AuthenticationYaoqi {
 
     public void setFoodCirculationLicense(String foodCirculationLicense) {
         this.foodCirculationLicense = foodCirculationLicense == null ? null : foodCirculationLicense.trim();
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status == null ? null : status.trim();
     }
 }

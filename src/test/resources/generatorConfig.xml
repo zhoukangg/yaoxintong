@@ -41,7 +41,7 @@
 
         <!--对应数据库表名 -->
         <!-- 指定数据库表 -->
-  <table tableName="authentication"></table>
+  		<table tableName="authentication"></table>
         <table tableName="company_info"></table>
         <table tableName="contact_information"></table>
         <table tableName="float_ad"></table>
@@ -61,6 +61,14 @@
         <table tableName="login_token"></table>
         <table tableName="picture"></table>
         <table tableName="view_pager"></table>
+        
+        
+        <table tableName="medicine_company"></table>
+        
+        <table tableName="m_r_c"></table>
+        
+        <table tableName="news"></table>
+        
 		<!-- <table tableName="floor_medicine"></table>-->
 		 <!--<table tableName="body_part"></table>-->
 		 <!--<table tableName="floor"></table>-->

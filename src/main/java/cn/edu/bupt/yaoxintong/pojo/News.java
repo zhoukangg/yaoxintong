@@ -1,7 +1,9 @@
 package cn.edu.bupt.yaoxintong.pojo;
 
+import java.util.Date;
+
 public class News {
-    private Integer id;
+    private String id;
 
     private String content;
 
@@ -9,11 +11,13 @@ public class News {
 
     private String img;
 
-    public Integer getId() {
+    private Date time;
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -39,5 +43,13 @@ public class News {
 
     public void setImg(String img) {
         this.img = img == null ? null : img.trim();
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
     }
 }

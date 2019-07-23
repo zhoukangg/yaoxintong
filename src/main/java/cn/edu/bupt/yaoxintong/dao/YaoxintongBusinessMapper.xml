@@ -8,12 +8,17 @@
     <result column="business_scope" property="businessScope" jdbcType="VARCHAR" />
     <result column="business_type" property="businessType" jdbcType="CHAR" />
     <result column="contact" property="contact" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="salt" property="salt" jdbcType="VARCHAR" />
     <result column="sex" property="sex" jdbcType="CHAR" />
     <result column="status" property="status" jdbcType="VARCHAR" />
     <result column="register_time" property="registerTime" jdbcType="DATE" />
     <result column="openid" property="openid" jdbcType="VARCHAR" />
+    <result column="sign" property="sign" jdbcType="VARCHAR" />
+    <result column="business_license" property="businessLicense" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="details" property="details" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -74,8 +79,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, username, business_name, business_scope, business_type, contact, password, salt, 
-    sex, status, register_time, openid
+    id, username, business_name, business_scope, business_type, contact, email, password, 
+    salt, sex, status, register_time, openid, sign, business_license, address, details
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.edu.bupt.yaoxintong.pojo.YaoxintongBusinessExample" >
     select
@@ -110,12 +115,16 @@
   <insert id="insert" parameterType="cn.edu.bupt.yaoxintong.pojo.YaoxintongBusiness" >
     insert into yaoxintong_business (id, username, business_name, 
       business_scope, business_type, contact, 
-      password, salt, sex, status, 
-      register_time, openid)
+      email, password, salt, 
+      sex, status, register_time, 
+      openid, sign, business_license, 
+      address, details)
     values (#{id,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{businessName,jdbcType=VARCHAR}, 
       #{businessScope,jdbcType=VARCHAR}, #{businessType,jdbcType=CHAR}, #{contact,jdbcType=VARCHAR}, 
-      #{password,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{status,jdbcType=VARCHAR}, 
-      #{registerTime,jdbcType=DATE}, #{openid,jdbcType=VARCHAR})
+      #{email,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=CHAR}, #{status,jdbcType=VARCHAR}, #{registerTime,jdbcType=DATE}, 
+      #{openid,jdbcType=VARCHAR}, #{sign,jdbcType=VARCHAR}, #{businessLicense,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{details,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.edu.bupt.yaoxintong.pojo.YaoxintongBusiness" >
     insert into yaoxintong_business
@@ -138,6 +147,9 @@
       <if test="contact != null" >
         contact,
       </if>
+      <if test="email != null" >
+        email,
+      </if>
       <if test="password != null" >
         password,
       </if>
@@ -155,6 +167,18 @@
       </if>
       <if test="openid != null" >
         openid,
+      </if>
+      <if test="sign != null" >
+        sign,
+      </if>
+      <if test="businessLicense != null" >
+        business_license,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="details != null" >
+        details,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -176,6 +200,9 @@
       <if test="contact != null" >
         #{contact,jdbcType=VARCHAR},
       </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
       <if test="password != null" >
         #{password,jdbcType=VARCHAR},
       </if>
@@ -193,6 +220,18 @@
       </if>
       <if test="openid != null" >
         #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="sign != null" >
+        #{sign,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicense != null" >
+        #{businessLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="details != null" >
+        #{details,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -223,6 +262,9 @@
       <if test="record.contact != null" >
         contact = #{record.contact,jdbcType=VARCHAR},
       </if>
+      <if test="record.email != null" >
+        email = #{record.email,jdbcType=VARCHAR},
+      </if>
       <if test="record.password != null" >
         password = #{record.password,jdbcType=VARCHAR},
       </if>
@@ -241,6 +283,18 @@
       <if test="record.openid != null" >
         openid = #{record.openid,jdbcType=VARCHAR},
       </if>
+      <if test="record.sign != null" >
+        sign = #{record.sign,jdbcType=VARCHAR},
+      </if>
+      <if test="record.businessLicense != null" >
+        business_license = #{record.businessLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.details != null" >
+        details = #{record.details,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -254,12 +308,17 @@
       business_scope = #{record.businessScope,jdbcType=VARCHAR},
       business_type = #{record.businessType,jdbcType=CHAR},
       contact = #{record.contact,jdbcType=VARCHAR},
+      email = #{record.email,jdbcType=VARCHAR},
       password = #{record.password,jdbcType=VARCHAR},
       salt = #{record.salt,jdbcType=VARCHAR},
       sex = #{record.sex,jdbcType=CHAR},
       status = #{record.status,jdbcType=VARCHAR},
       register_time = #{record.registerTime,jdbcType=DATE},
-      openid = #{record.openid,jdbcType=VARCHAR}
+      openid = #{record.openid,jdbcType=VARCHAR},
+      sign = #{record.sign,jdbcType=VARCHAR},
+      business_license = #{record.businessLicense,jdbcType=VARCHAR},
+      address = #{record.address,jdbcType=VARCHAR},
+      details = #{record.details,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -282,6 +341,9 @@
       <if test="contact != null" >
         contact = #{contact,jdbcType=VARCHAR},
       </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
       <if test="password != null" >
         password = #{password,jdbcType=VARCHAR},
       </if>
@@ -300,6 +362,18 @@
       <if test="openid != null" >
         openid = #{openid,jdbcType=VARCHAR},
       </if>
+      <if test="sign != null" >
+        sign = #{sign,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicense != null" >
+        business_license = #{businessLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="details != null" >
+        details = #{details,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
@@ -310,12 +384,17 @@
       business_scope = #{businessScope,jdbcType=VARCHAR},
       business_type = #{businessType,jdbcType=CHAR},
       contact = #{contact,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       salt = #{salt,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=CHAR},
       status = #{status,jdbcType=VARCHAR},
       register_time = #{registerTime,jdbcType=DATE},
-      openid = #{openid,jdbcType=VARCHAR}
+      openid = #{openid,jdbcType=VARCHAR},
+      sign = #{sign,jdbcType=VARCHAR},
+      business_license = #{businessLicense,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      details = #{details,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>

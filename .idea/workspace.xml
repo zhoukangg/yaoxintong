@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="yaoxintong:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a7a4674e-810c-44b7-9536-3c5b446d17bd" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" afterPath="$PROJECT_DIR$/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/.jsdtscope" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.container" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.validation.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/core/generic/GenericController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/core/generic/GenericController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/core/generic/GenericDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/core/generic/GenericDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/core/generic/GenericEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/core/generic/GenericEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/core/generic/GenericService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/core/generic/GenericService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/core/generic/GenericServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/core/generic/GenericServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/core/generic/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/core/generic/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/web/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/web/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/web/dao/TestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/web/dao/TestMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/web/dao/TestMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/web/dao/TestMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/web/model/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/web/model/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/web/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/web/model/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/web/model/TestExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/web/model/TestExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/web/service/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/web/service/TestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/web/service/impl/TestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/springmvc/web/service/impl/TestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/componet/PasswordHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/componet/PasswordHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/componet/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/componet/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/.UserController.java.swo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/BusinessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/BusinessController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/ClaimOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/ClaimOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/CompanyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/MedicineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/MedicineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/UserOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/UserOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/AuthenticationDianshangMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/AuthenticationDianshangMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/AuthenticationDianshangMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/AuthenticationDianshangMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/AuthenticationYaoqiMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/AuthenticationYaoqiMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/AuthenticationYaoqiMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/AuthenticationYaoqiMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/ClaimOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/ClaimOrderMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/ClaimOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/ClaimOrderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/ContactInformationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/ContactInformationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/ContactInformationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/ContactInformationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/LoginTokenMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/LoginTokenMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/LoginTokenMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/LoginTokenMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MRCMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MRCMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MRCMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MRCMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MedicineCompanyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MedicineCompanyMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MedicineCompanyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MedicineCompanyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MedicineMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MedicineMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MedicineMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MedicineMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/NewsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/NewsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/NewsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/NewsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/PictureMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/PictureMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/PictureMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/PictureMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/UserOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/UserOrderMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/UserOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/UserOrderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/YaoxintongBusinessMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/YaoxintongBusinessMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/YaoxintongBusinessMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/YaoxintongBusinessMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/YaoxintongUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/YaoxintongUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/YaoxintongUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/YaoxintongUserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/AuthenticationDianshang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/AuthenticationDianshang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/AuthenticationDianshangExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/AuthenticationDianshangExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/AuthenticationYaoqi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/AuthenticationYaoqi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/AuthenticationYaoqiExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/AuthenticationYaoqiExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/ClaimOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/ClaimOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/ClaimOrderExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/ClaimOrderExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/ContactInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/ContactInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/ContactInformationExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/ContactInformationExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/LoginToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/LoginToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/LoginTokenExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/LoginTokenExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/MRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/MRC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/MRCExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/MRCExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/Medicine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/MedicineCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/MedicineCompany.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/MedicineCompanyExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/MedicineCompanyExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/MedicineExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/MedicineExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/News.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/NewsExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/NewsExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/Picture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/PictureExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/PictureExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/UserOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/UserOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/UserOrderExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/UserOrderExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/YaoxintongBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/YaoxintongBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/YaoxintongBusinessExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/YaoxintongBusinessExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/YaoxintongUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/YaoxintongUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/YaoxintongUserExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/YaoxintongUserExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/response/model/AuthentocationInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/response/model/AuthentocationInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/response/model/BriefMedicineInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/response/model/BriefMedicineInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/response/model/BusinessInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/response/model/BusinessInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/response/model/MapEdge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/response/model/MapEdge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/response/model/MapModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/response/model/MapModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/response/model/MapNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/response/model/MapNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/response/model/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/response/model/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/response/model/ViewPageData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/response/model/ViewPageData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/BusinessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/BusinessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/ClaimOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/ClaimOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/CompanyInfoSevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/CompanyInfoSevice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/CompanyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/ContactInformationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/ContactInformationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/LoginTokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/LoginTokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/MedicineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/MedicineService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/PictureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/PictureService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/UserOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/UserOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/AuthenticationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/BusinessServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/BusinessServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/ClaimOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/ClaimOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/CompanyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/CompanyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/ContactInfomationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/ContactInfomationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/LoginTokenServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/LoginTokenServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/MedicineServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/MedicineServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/PictureServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/PictureServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/UserOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/UserOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/CustomDateConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/CustomDateConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/DateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/DateUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/GenericReturnModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/GenericReturnModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/ListUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/ListUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/MD5Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/MD5Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/PropertiesValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/PropertiesValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/QuartzUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/QuartzUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/ReturnModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/ReturnModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/StringUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ehcache.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ehcache.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/2017_10_29/2017_10_29_16_22_41_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/2017_10_29/2017_10_29_16_22_41_test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/2017_10_29/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/2017_10_29/Thumbs.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/2017_10_30_/2017_10_30_09_59_11_coding使用.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/2017_10_30_/2017_10_30_09_59_11_coding使用.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/generatorConfig.xml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MedicineController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/MedicineController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="273" column="49" lean-forward="true" selection-start-line="273" selection-start-column="49" selection-end-line="273" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MedicineServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/MedicineServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="132" column="47" selection-start-line="132" selection-start-column="47" selection-end-line="132" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompanyController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/CompanyController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="28" column="24" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Term.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/ansj/ansj_seg/5.1.5/ansj_seg-5.1.5.jar!/org/ansj/domain/Term.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/NewsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/NewsServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/NewsMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="News.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/News.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MedicineService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/MedicineService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>&lt;servlet&gt;</find>
+      <find>ansj</find>
+      <find>select</find>
+      <find>selectByExample</find>
+      <find>selectByPrimaryKey</find>
+      <find>detail</find>
+      <find>drug_type_1</find>
+      <find>drug_type_2</find>
+      <find>drug_type_3</find>
+      <find>getResource</find>
+      <find>medicines.size()</find>
+      <find>getHot</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>drug_type1</replace>
+      <replace>drug_type2</replace>
+      <replace>drug_type3</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/yaoxintong/Ansj_seg_Test.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MedicineMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/MedicineServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/MedicineController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MedicineMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/NewsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/News.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bupt" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bupt" type="462c0819:PsiDirectoryNode" />
+              <item name="springmvc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bupt" type="462c0819:PsiDirectoryNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bupt" type="462c0819:PsiDirectoryNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bupt" type="462c0819:PsiDirectoryNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.21" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="yaoxintong:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_yaoxintong" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="63198" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="yaoxintong:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.21" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_yaoxintong" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="63198" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="targets">
+            <list>
+              <WatchedTargetModelImpl>
+                <option name="name" value="CONTEXT_XML" />
+                <option name="transportStagingTarget">
+                  <TransportTarget>
+                    <option name="id" value="0ff0163b-d389-483b-ac18-46e97e2750dd" />
+                    <id>0ff0163b-d389-483b-ac18-46e97e2750dd</id>
+                  </TransportTarget>
+                </option>
+                <option name="watchedLocalPath" value="" />
+                <watched-path />
+                <name>CONTEXT_XML</name>
+                <transport-target>
+                  <TransportTarget>
+                    <option name="id" value="0ff0163b-d389-483b-ac18-46e97e2750dd" />
+                    <id>0ff0163b-d389-483b-ac18-46e97e2750dd</id>
+                  </TransportTarget>
+                </transport-target>
+              </WatchedTargetModelImpl>
+              <StagingTargetModelImpl>
+                <option name="name" value="STAGING" />
+                <option name="stagingRemotePath" value="" />
+                <option name="transportStagingTarget">
+                  <TransportTarget>
+                    <option name="id" value="a6e8044c-324f-401a-9d94-64be055a8cd5" />
+                    <id>a6e8044c-324f-401a-9d94-64be055a8cd5</id>
+                  </TransportTarget>
+                </option>
+                <staging-path />
+                <name>STAGING</name>
+                <transport-target>
+                  <TransportTarget>
+                    <option name="id" value="a6e8044c-324f-401a-9d94-64be055a8cd5" />
+                    <id>a6e8044c-324f-401a-9d94-64be055a8cd5</id>
+                  </TransportTarget>
+                </transport-target>
+              </StagingTargetModelImpl>
+            </list>
+          </option>
+          <option name="transportHostId" />
+          <host-id />
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="63169" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a7a4674e-810c-44b7-9536-3c5b446d17bd" name="Default" comment="" />
+      <created>1563716512691</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1563716512691</updated>
+      <workItem from="1563716517142" duration="9996000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="9996000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Application Servers" weight="0.32903227" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info id="Capture Tool" />
+      <window_info id="Designer" />
+      <window_info anchor="right" id="Database" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" weight="0.32903227" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info id="Image Layers" />
+      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.48307693" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Spring" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24236874" />
+      <window_info anchor="right" id="Bean Validation" />
+      <window_info id="Web" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/AuthenticationDianshangMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/yaoxintong/Ansj_seg_Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/MedicineExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2949">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MedicineMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/Medicine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-152">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MedicineMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="75" lean-forward="true" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3195">
+          <caret line="213" column="13" selection-start-line="213" selection-start-column="13" selection-end-line="217" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/NewsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/NewsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/NewsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/News.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/MedicineService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/MedicineController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="273" column="49" lean-forward="true" selection-start-line="273" selection-start-column="49" selection-end-line="273" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/ansj/ansj_seg/5.1.5/ansj_seg-5.1.5.jar!/org/ansj/domain/Term.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/service/impl/MedicineServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="132" column="47" selection-start-line="132" selection-start-column="47" selection-end-line="132" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/CompanyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="28" column="24" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

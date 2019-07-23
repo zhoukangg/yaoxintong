@@ -5,23 +5,23 @@ public class MapEdge {
 	// "target": "韩菱纱",
 	// "relation": "挚友"
 
-	private String source;
-	private String target;
+	private int source;
+	private int target;
 	private String relation;
 
-	public String getSource() {
+	public int getSource() {
 		return source;
 	}
 
-	public void setSource(String source) {
+	public void setSource(int source) {
 		this.source = source;
 	}
 
-	public String getTarget() {
+	public int getTarget() {
 		return target;
 	}
 
-	public void setTarget(String target) {
+	public void setTarget(int target) {
 		this.target = target;
 	}
 

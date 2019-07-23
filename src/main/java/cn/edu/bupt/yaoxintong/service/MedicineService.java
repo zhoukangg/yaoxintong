@@ -1,6 +1,7 @@
 package cn.edu.bupt.yaoxintong.service;
 
 import java.util.List;
+
 import cn.edu.bupt.yaoxintong.pojo.Medicine;
 import cn.edu.bupt.yaoxintong.pojo.MedicineCompany;
 
@@ -36,4 +37,6 @@ public interface MedicineService {
 	List<Medicine> getMapDatas(MedicineCompany company, String relation);
 
 	List<Medicine> getHotMedicines();
+	
+	List<Medicine> search(String content,int type);
 }

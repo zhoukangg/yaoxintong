@@ -15,6 +15,8 @@ public class YaoxintongBusiness {
 
     private String contact;
 
+    private String email;
+
     private String password;
 
     private String salt;
@@ -26,6 +28,14 @@ public class YaoxintongBusiness {
     private Date registerTime;
 
     private String openid;
+
+    private String sign;
+
+    private String businessLicense;
+
+    private String address;
+
+    private String details;
 
     public String getId() {
         return id;
@@ -75,6 +85,14 @@ public class YaoxintongBusiness {
         this.contact = contact == null ? null : contact.trim();
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
+    }
+
     public String getPassword() {
         return password;
     }
@@ -121,5 +139,37 @@ public class YaoxintongBusiness {
 
     public void setOpenid(String openid) {
         this.openid = openid == null ? null : openid.trim();
+    }
+
+    public String getSign() {
+        return sign;
+    }
+
+    public void setSign(String sign) {
+        this.sign = sign == null ? null : sign.trim();
+    }
+
+    public String getBusinessLicense() {
+        return businessLicense;
+    }
+
+    public void setBusinessLicense(String businessLicense) {
+        this.businessLicense = businessLicense == null ? null : businessLicense.trim();
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details == null ? null : details.trim();
     }
 }

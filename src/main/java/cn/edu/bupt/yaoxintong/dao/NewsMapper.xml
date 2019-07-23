@@ -6,6 +6,7 @@
     <result column="content" property="content" jdbcType="VARCHAR" />
     <result column="url" property="url" jdbcType="VARCHAR" />
     <result column="img" property="img" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -66,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, content, url, img
+    id, content, url, img, time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.edu.bupt.yaoxintong.pojo.NewsExample" >
     select
@@ -100,9 +101,9 @@
   </delete>
   <insert id="insert" parameterType="cn.edu.bupt.yaoxintong.pojo.News" >
     insert into news (id, content, url, 
-      img)
+      img, time)
     values (#{id,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
-      #{img,jdbcType=VARCHAR})
+      #{img,jdbcType=VARCHAR}, #{time,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="cn.edu.bupt.yaoxintong.pojo.News" >
     insert into news
@@ -119,6 +120,9 @@
       <if test="img != null" >
         img,
       </if>
+      <if test="time != null" >
+        time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -132,6 +136,9 @@
       </if>
       <if test="img != null" >
         #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -156,6 +163,9 @@
       <if test="record.img != null" >
         img = #{record.img,jdbcType=VARCHAR},
       </if>
+      <if test="record.time != null" >
+        time = #{record.time,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -166,7 +176,8 @@
     set id = #{record.id,jdbcType=INTEGER},
       content = #{record.content,jdbcType=VARCHAR},
       url = #{record.url,jdbcType=VARCHAR},
-      img = #{record.img,jdbcType=VARCHAR}
+      img = #{record.img,jdbcType=VARCHAR},
+      time = #{record.time,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -183,6 +194,9 @@
       <if test="img != null" >
         img = #{img,jdbcType=VARCHAR},
       </if>
+      <if test="time != null" >
+        time = #{time,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -190,7 +204,8 @@
     update news
     set content = #{content,jdbcType=VARCHAR},
       url = #{url,jdbcType=VARCHAR},
-      img = #{img,jdbcType=VARCHAR}
+      img = #{img,jdbcType=VARCHAR},
+      time = #{time,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

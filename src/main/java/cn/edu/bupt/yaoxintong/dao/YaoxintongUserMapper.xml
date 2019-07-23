@@ -11,6 +11,8 @@
     <result column="status" property="status" jdbcType="VARCHAR" />
     <result column="register_time" property="registerTime" jdbcType="DATE" />
     <result column="openid" property="openid" jdbcType="VARCHAR" />
+    <result column="contact" property="contact" jdbcType="VARCHAR" />
+    <result column="details" property="details" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -71,7 +73,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, username, password, salt, birthday, sex, status, register_time, openid
+    id, username, password, salt, birthday, sex, status, register_time, openid, contact, 
+    details
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.edu.bupt.yaoxintong.pojo.YaoxintongUserExample" >
     select
@@ -106,10 +109,12 @@
   <insert id="insert" parameterType="cn.edu.bupt.yaoxintong.pojo.YaoxintongUser" >
     insert into yaoxintong_user (id, username, password, 
       salt, birthday, sex, status, 
-      register_time, openid)
+      register_time, openid, contact, 
+      details)
     values (#{id,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{salt,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, #{sex,jdbcType=CHAR}, #{status,jdbcType=VARCHAR}, 
-      #{registerTime,jdbcType=DATE}, #{openid,jdbcType=VARCHAR})
+      #{registerTime,jdbcType=DATE}, #{openid,jdbcType=VARCHAR}, #{contact,jdbcType=VARCHAR}, 
+      #{details,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.edu.bupt.yaoxintong.pojo.YaoxintongUser" >
     insert into yaoxintong_user
@@ -141,6 +146,12 @@
       <if test="openid != null" >
         openid,
       </if>
+      <if test="contact != null" >
+        contact,
+      </if>
+      <if test="details != null" >
+        details,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -169,6 +180,12 @@
       </if>
       <if test="openid != null" >
         #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null" >
+        #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="details != null" >
+        #{details,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -208,6 +225,12 @@
       <if test="record.openid != null" >
         openid = #{record.openid,jdbcType=VARCHAR},
       </if>
+      <if test="record.contact != null" >
+        contact = #{record.contact,jdbcType=VARCHAR},
+      </if>
+      <if test="record.details != null" >
+        details = #{record.details,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -223,7 +246,9 @@
       sex = #{record.sex,jdbcType=CHAR},
       status = #{record.status,jdbcType=VARCHAR},
       register_time = #{record.registerTime,jdbcType=DATE},
-      openid = #{record.openid,jdbcType=VARCHAR}
+      openid = #{record.openid,jdbcType=VARCHAR},
+      contact = #{record.contact,jdbcType=VARCHAR},
+      details = #{record.details,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -255,6 +280,12 @@
       <if test="openid != null" >
         openid = #{openid,jdbcType=VARCHAR},
       </if>
+      <if test="contact != null" >
+        contact = #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="details != null" >
+        details = #{details,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
@@ -267,7 +298,9 @@
       sex = #{sex,jdbcType=CHAR},
       status = #{status,jdbcType=VARCHAR},
       register_time = #{registerTime,jdbcType=DATE},
-      openid = #{openid,jdbcType=VARCHAR}
+      openid = #{openid,jdbcType=VARCHAR},
+      contact = #{contact,jdbcType=VARCHAR},
+      details = #{details,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>

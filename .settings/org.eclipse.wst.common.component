@@ -4,7 +4,10 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <property name="java-output-path" value="/yaoxintong/target/classes"/>
+        <dependent-module archiveName="ansj_seg-5.1.5.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ansj_seg/ansj_seg">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="yaoxintong"/>
+        <property name="java-output-path" value="/yaoxintong/target/classes"/>
     </wb-module>
 </project-modules>

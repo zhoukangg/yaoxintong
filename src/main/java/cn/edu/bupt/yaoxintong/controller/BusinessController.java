@@ -1,6 +1,5 @@
 package cn.edu.bupt.yaoxintong.controller;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -24,7 +23,6 @@ import cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang;
 import cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqi;
 import cn.edu.bupt.yaoxintong.pojo.ContactInformation;
 import cn.edu.bupt.yaoxintong.pojo.LoginToken;
-import cn.edu.bupt.yaoxintong.pojo.Medicine;
 import cn.edu.bupt.yaoxintong.pojo.YaoxintongBusiness;
 import cn.edu.bupt.yaoxintong.response.model.AuthentocationInfo;
 import cn.edu.bupt.yaoxintong.response.model.BusinessInfo;
@@ -34,7 +32,6 @@ import cn.edu.bupt.yaoxintong.service.ContactInformationService;
 import cn.edu.bupt.yaoxintong.service.LoginTokenService;
 import cn.edu.bupt.yaoxintong.util.Constant;
 import cn.edu.bupt.yaoxintong.util.FileUtil;
-import cn.edu.bupt.yaoxintong.util.ListUtil;
 import cn.edu.bupt.yaoxintong.util.Logger;
 import cn.edu.bupt.yaoxintong.util.ReturnModel;
 import cn.edu.bupt.yaoxintong.util.StringUtil;

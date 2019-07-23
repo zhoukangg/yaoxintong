@@ -20,6 +20,8 @@ public interface MedicineMapper {
 
     Medicine selectByPrimaryKey(String id);
 
+    Medicine findById(String id);
+
     int updateByExampleSelective(@Param("record") Medicine record, @Param("example") MedicineExample example);
 
     int updateByExample(@Param("record") Medicine record, @Param("example") MedicineExample example);

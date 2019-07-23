@@ -164,13 +164,11 @@ public class CompanyController {
 			MapModel mapModel = new MapModel();
 			List<MapNode> nodes = new ArrayList<>();
 			List<MapEdge> edges = new ArrayList<>();
-
-			MapNode mapNode = new MapNode();
-			mapNode.setName(company.getCompanyName());
-			nodes.add(mapNode);
-
 			switch (map_op) {
 			case 0:
+				MapNode mapNode = new MapNode();
+				mapNode.setName(company.getCompanyName());
+				nodes.add(mapNode);
 				// 获取制药企业
 				List<Medicine> proMedicines = medicineService.getMapDatas(company, Constant.RELATION_PRO);
 				for (Medicine medicine : proMedicines) {
@@ -179,8 +177,8 @@ public class CompanyController {
 					nodes.add(node);
 
 					MapEdge mapEdge = new MapEdge();
-					mapEdge.setTarget(medicine.getDrugName());
-					mapEdge.setSource(company.getCompanyName());
+					mapEdge.setTarget(0);
+					mapEdge.setSource(proMedicines.indexOf(medicine));
 					mapEdge.setRelation(Constant.RELATION_PRO);
 					edges.add(mapEdge);
 				}
@@ -196,8 +194,8 @@ public class CompanyController {
 							nodes.add(node);
 
 							MapEdge mapEdge = new MapEdge();
-							mapEdge.setTarget(medicine.getDrugName());
-							mapEdge.setSource(company.getCompanyName());
+							mapEdge.setTarget(0);
+							mapEdge.setSource(saleMedicines.indexOf(medicine));
 							mapEdge.setRelation(Constant.RELATION_SALE);
 							edges.add(mapEdge);
 						}
@@ -232,8 +230,8 @@ public class CompanyController {
 			node.setName(m.getCompanyName());
 			nodes.add(node);
 			MapEdge mapEdge = new MapEdge();
-			mapEdge.setSource(source.getCompanyName());
-			mapEdge.setTarget(m.getCompanyName());
+			mapEdge.setSource(0);
+			mapEdge.setTarget(targets.indexOf(m));
 			mapEdge.setRelation(relationship);
 			edges.add(mapEdge);
 		}

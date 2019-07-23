@@ -10,9 +10,9 @@
     <result column="recommend" property="recommend" jdbcType="TINYINT" />
     <result column="drug_form" property="drugForm" jdbcType="VARCHAR" />
     <result column="type" property="type" jdbcType="VARCHAR" />
-    <result column="drug_type_1" property="drugType1" jdbcType="VARCHAR" />
-    <result column="drug_type_2" property="drugType2" jdbcType="VARCHAR" />
-    <result column="drug_type_3" property="drugType3" jdbcType="VARCHAR" />
+    <result column="drug_type1" property="drugType1" jdbcType="VARCHAR" />
+    <result column="drug_type2" property="drugType2" jdbcType="VARCHAR" />
+    <result column="drug_type3" property="drugType3" jdbcType="VARCHAR" />
     <result column="prescription_type" property="prescriptionType" jdbcType="VARCHAR" />
     <result column="import_type" property="importType" jdbcType="VARCHAR" />
     <result column="drug_specifications" property="drugSpecifications" jdbcType="VARCHAR" />
@@ -86,8 +86,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, drug_name, brand, manufacturer, license_number, recommend, drug_form, type, drug_type_1, 
-    drug_type_2, drug_type_3, prescription_type, import_type, drug_specifications, product_place, 
+    id, drug_name, brand, manufacturer, license_number, recommend, drug_form, type, drug_type1,
+    drug_type2, drug_type3, prescription_type, import_type, drug_specifications, product_place,
     valid_period, use_for_illness, use_for_people, use_function, dosage_use, Storage_condition, 
     product_weight, price, hot
   </sql>
@@ -124,8 +124,8 @@
   <insert id="insert" parameterType="cn.edu.bupt.yaoxintong.pojo.Medicine" >
     insert into medicine (id, drug_name, brand, 
       manufacturer, license_number, recommend, 
-      drug_form, type, drug_type_1, 
-      drug_type_2, drug_type_3, prescription_type, 
+      drug_form, type, drug_type1,
+      drug_type2, drug_type3, prescription_type,
       import_type, drug_specifications, product_place, 
       valid_period, use_for_illness, use_for_people, 
       use_function, dosage_use, Storage_condition, 
@@ -169,13 +169,13 @@
         type,
       </if>
       <if test="drugType1 != null" >
-        drug_type_1,
+        drug_type1,
       </if>
       <if test="drugType2 != null" >
-        drug_type_2,
+        drug_type2,
       </if>
       <if test="drugType3 != null" >
-        drug_type_3,
+        drug_type3,
       </if>
       <if test="prescriptionType != null" >
         prescription_type,
@@ -326,13 +326,13 @@
         type = #{record.type,jdbcType=VARCHAR},
       </if>
       <if test="record.drugType1 != null" >
-        drug_type_1 = #{record.drugType1,jdbcType=VARCHAR},
+        drug_type1 = #{record.drugType1,jdbcType=VARCHAR},
       </if>
       <if test="record.drugType2 != null" >
-        drug_type_2 = #{record.drugType2,jdbcType=VARCHAR},
+        drug_type2 = #{record.drugType2,jdbcType=VARCHAR},
       </if>
       <if test="record.drugType3 != null" >
-        drug_type_3 = #{record.drugType3,jdbcType=VARCHAR},
+        drug_type3 = #{record.drugType3,jdbcType=VARCHAR},
       </if>
       <if test="record.prescriptionType != null" >
         prescription_type = #{record.prescriptionType,jdbcType=VARCHAR},
@@ -388,9 +388,9 @@
       recommend = #{record.recommend,jdbcType=TINYINT},
       drug_form = #{record.drugForm,jdbcType=VARCHAR},
       type = #{record.type,jdbcType=VARCHAR},
-      drug_type_1 = #{record.drugType1,jdbcType=VARCHAR},
-      drug_type_2 = #{record.drugType2,jdbcType=VARCHAR},
-      drug_type_3 = #{record.drugType3,jdbcType=VARCHAR},
+      drug_type1 = #{record.drugType1,jdbcType=VARCHAR},
+      drug_type2 = #{record.drugType2,jdbcType=VARCHAR},
+      drug_type3 = #{record.drugType3,jdbcType=VARCHAR},
       prescription_type = #{record.prescriptionType,jdbcType=VARCHAR},
       import_type = #{record.importType,jdbcType=VARCHAR},
       drug_specifications = #{record.drugSpecifications,jdbcType=VARCHAR},
@@ -433,13 +433,13 @@
         type = #{type,jdbcType=VARCHAR},
       </if>
       <if test="drugType1 != null" >
-        drug_type_1 = #{drugType1,jdbcType=VARCHAR},
+        drug_type1 = #{drugType1,jdbcType=VARCHAR},
       </if>
       <if test="drugType2 != null" >
-        drug_type_2 = #{drugType2,jdbcType=VARCHAR},
+        drug_type2 = #{drugType2,jdbcType=VARCHAR},
       </if>
       <if test="drugType3 != null" >
-        drug_type_3 = #{drugType3,jdbcType=VARCHAR},
+        drug_type3 = #{drugType3,jdbcType=VARCHAR},
       </if>
       <if test="prescriptionType != null" >
         prescription_type = #{prescriptionType,jdbcType=VARCHAR},
@@ -492,9 +492,9 @@
       recommend = #{recommend,jdbcType=TINYINT},
       drug_form = #{drugForm,jdbcType=VARCHAR},
       type = #{type,jdbcType=VARCHAR},
-      drug_type_1 = #{drugType1,jdbcType=VARCHAR},
-      drug_type_2 = #{drugType2,jdbcType=VARCHAR},
-      drug_type_3 = #{drugType3,jdbcType=VARCHAR},
+      drug_type1 = #{drugType1,jdbcType=VARCHAR},
+      drug_type2 = #{drugType2,jdbcType=VARCHAR},
+      drug_type3 = #{drugType3,jdbcType=VARCHAR},
       prescription_type = #{prescriptionType,jdbcType=VARCHAR},
       import_type = #{importType,jdbcType=VARCHAR},
       drug_specifications = #{drugSpecifications,jdbcType=VARCHAR},

@@ -114,7 +114,8 @@ public class ClaimOrderController {
 			String userId = loginToken.getUserid();
 			if (userId != null) {
 				ClaimOrder claimOrder = new ClaimOrder();
-				claimOrder.setId(UUID.randomUUID().toString());
+				String id = UUID.randomUUID().toString();
+				claimOrder.setId(id);
 				claimOrder.setOrderId(orderNumber);
 				claimOrder.setClaimKind(paybackway);
 				claimOrder.setClaimReason(claimReason);
@@ -134,6 +135,7 @@ public class ClaimOrderController {
 				result.setDatum(claimOrder);
 				boolean r = claimOrderService.addClaimOrder(claimOrder);
 				result.setResult(r);
+				result.setDatum(id);
 			} else {
 				result.setResult(false);
 				if (Constant.DEBUG) {

@@ -53,7 +53,8 @@
         <table tableName="claim_order"></table>
         <table tableName="user_order"></table>
         <table tableName="yaoxintong_user"></table>
-        
+        <table tableName="yaoxintong_admin"></table>
+       
         <table tableName="yaoxintong_business"></table>
         <table tableName="authentication_yaoqi"></table>
         <table tableName="authentication_dianshang"></table>

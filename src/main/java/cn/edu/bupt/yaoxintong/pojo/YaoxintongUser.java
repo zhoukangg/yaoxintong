@@ -21,6 +21,10 @@ public class YaoxintongUser {
 
     private String openid;
 
+    private String contact;
+
+    private String details;
+
     public String getId() {
         return id;
     }
@@ -91,5 +95,21 @@ public class YaoxintongUser {
 
     public void setOpenid(String openid) {
         this.openid = openid == null ? null : openid.trim();
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact == null ? null : contact.trim();
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details == null ? null : details.trim();
     }
 }

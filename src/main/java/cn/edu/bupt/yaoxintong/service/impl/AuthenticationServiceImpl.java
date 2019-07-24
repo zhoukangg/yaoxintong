@@ -2,15 +2,12 @@ package cn.edu.bupt.yaoxintong.service.impl;
 
 import java.util.List;
 
+import cn.edu.bupt.yaoxintong.pojo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.edu.bupt.yaoxintong.dao.AuthenticationDianshangMapper;
 import cn.edu.bupt.yaoxintong.dao.AuthenticationYaoqiMapper;
-import cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshang;
-import cn.edu.bupt.yaoxintong.pojo.AuthenticationDianshangExample;
-import cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqi;
-import cn.edu.bupt.yaoxintong.pojo.AuthenticationYaoqiExample;
 import cn.edu.bupt.yaoxintong.service.AuthenticationService;
 
 @Service
@@ -27,10 +24,24 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 		return authenticationYaoqiMapper.insert(yaoqi) > 0;
 	}
 
+	public AuthenticationYaoqi getAuthYaoqiByBusinessId(String businessId) {
+		AuthenticationYaoqiExample example = new AuthenticationYaoqiExample();
+		example.createCriteria().andBusinessIdEqualTo(businessId);
+		List<AuthenticationYaoqi> list = authenticationYaoqiMapper.selectByExample(example);
+		return list.size()>0?list.get(0):null;
+	}
+
 	@Override
 	public boolean addAuthenticationDianshang(AuthenticationDianshang dianshang) {
 		// TODO Auto-generated method stub
 		return authenticationDianshangMapper.insert(dianshang) > 0;
+	}
+
+	public AuthenticationDianshang getAuthDianShangByBusinessId(String businessId) {
+		AuthenticationDianshangExample example = new AuthenticationDianshangExample();
+		example.createCriteria().andBusinessIdEqualTo(businessId);
+		List<AuthenticationDianshang> list = authenticationDianshangMapper.selectByExample(example);
+		return list.size()>0?list.get(0):null;
 	}
 
 	@Override

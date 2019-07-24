@@ -46,4 +46,12 @@ public class BusinessServiceImpl implements BusinessService {
 		return list.size()>0?list.get(0):null;
 	}
 
+	@Override
+	public YaoxintongBusiness getUserById(String id) {
+		YaoxintongBusinessExample example = new YaoxintongBusinessExample();
+		example.createCriteria().andIdEqualTo(id);
+		List<YaoxintongBusiness> list = businessMapper.selectByExample(example);
+		return list.size()>0?list.get(0):null;
+	}
+
 }

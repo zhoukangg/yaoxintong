@@ -14,9 +14,11 @@
 		<project.build.jdk>1.8</project.build.jdk>
 
 		<!-- plugin setting -->
-		<mybatis.generator.generatorConfig.xml>${basedir}/src/test/resources/generatorConfig.xml
+		<mybatis.generator.generatorConfig.xml>
+			${basedir}/src/test/resources/generatorConfig.xml
 		</mybatis.generator.generatorConfig.xml>
-		<mybatis.generator.generatorConfig.properties>file:///${basedir}/src/test/resources/generatorConfig.properties
+		<mybatis.generator.generatorConfig.properties>
+			file:///${basedir}/src/test/resources/generatorConfig.properties
 		</mybatis.generator.generatorConfig.properties>
 
 		<!-- plugin versions -->

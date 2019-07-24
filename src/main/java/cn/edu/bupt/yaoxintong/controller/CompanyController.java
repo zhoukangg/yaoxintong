@@ -1,11 +1,16 @@
 package cn.edu.bupt.yaoxintong.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -166,6 +171,7 @@ public class CompanyController {
 			List<MapEdge> edges = new ArrayList<>();
 			switch (map_op) {
 			case 0:
+			    // 把自己（中心节点）添加进来
 				MapNode mapNode = new MapNode();
 				mapNode.setName(company.getCompanyName());
 				nodes.add(mapNode);
@@ -178,7 +184,7 @@ public class CompanyController {
 
 					MapEdge mapEdge = new MapEdge();
 					mapEdge.setTarget(0);
-					mapEdge.setSource(proMedicines.indexOf(medicine));
+					mapEdge.setSource(nodes.indexOf(node));
 					mapEdge.setRelation(Constant.RELATION_PRO);
 					edges.add(mapEdge);
 				}
@@ -187,19 +193,17 @@ public class CompanyController {
 				logger.info("saleMedicines.size() " + saleMedicines.size());
 				if (saleMedicines.size() > 0) {
 					for (Medicine medicine : saleMedicines) {
-						MapNode node = new MapNode();
 						if (medicine != null) {
-							logger.info("medicine.toString() " + medicine.toString());
+                            MapNode node = new MapNode();
 							node.setName(medicine.getDrugName() == null ? "" : medicine.getDrugName());
 							nodes.add(node);
 
 							MapEdge mapEdge = new MapEdge();
 							mapEdge.setTarget(0);
-							mapEdge.setSource(saleMedicines.indexOf(medicine));
+							mapEdge.setSource(nodes.indexOf(node));
 							mapEdge.setRelation(Constant.RELATION_SALE);
 							edges.add(mapEdge);
 						}
-
 					}
 				}
 
@@ -223,18 +227,130 @@ public class CompanyController {
 		return result;
 	}
 
-	private void createRelation(MedicineCompany source, List<MapNode> nodes, List<MapEdge> edges, String relationship,
-			List<MedicineCompany> targets) {
-		for (MedicineCompany m : targets) {
+	private void createRelation(MedicineCompany source, List<MapNode> nodes, List<MapEdge> edges, String relationship, List<MedicineCompany> targets) {
+        // 把自己（中心节点）添加进来
+        MapNode mapNode = new MapNode();
+        mapNode.setName(source.getCompanyName());
+        nodes.add(mapNode);
+
+        for (MedicineCompany m : targets) {
 			MapNode node = new MapNode();
 			node.setName(m.getCompanyName());
 			nodes.add(node);
+
 			MapEdge mapEdge = new MapEdge();
 			mapEdge.setSource(0);
-			mapEdge.setTarget(targets.indexOf(m));
+			mapEdge.setTarget(nodes.indexOf(node));
 			mapEdge.setRelation(relationship);
 			edges.add(mapEdge);
 		}
+	}
+
+
+	// 查询指定ID对应药企业报告
+	@RequestMapping(value = "/report/", method = RequestMethod.POST)
+	public @ResponseBody ReturnModel report(String id, HttpServletResponse response, HttpServletRequest request) {
+		logger.info("======进入了CompanyController的/report");
+		// 解决Ajax跨域请求问题
+		response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
+		response.setHeader("Access-Control-Allow-Credentials", "true");
+
+		ReturnModel result = new ReturnModel();
+		MedicineCompany company = companyService.searchById(id);
+
+		// Create Document Instance
+		Document document = new Document();
+		// add Chinese font
+		try {
+			BaseFont bfChinese = BaseFont.createFont("STSong-Light", "UniGB-UCS2-H", BaseFont.NOT_EMBEDDED);
+			Font headfont = new Font(bfChinese, 20, Font.BOLD);
+			// headfont.setColor(0,0,255);
+			Font keyfont = new Font(bfChinese, 14, Font.BOLD);
+			Font textfont = new Font(bfChinese, 14, Font.NORMAL);
+
+			String path = request.getServletContext().getRealPath("/pdf/");
+			PdfWriter.getInstance(document, new FileOutputStream(new File(path+id+".pdf")));
+
+			document.open();
+			// 标题
+			document.addTitle("药信通数据报告");
+			// 作者
+			document.addAuthor("药信通");
+			// 主题
+			document.addSubject("this is subject");
+			// 关键字
+			document.addKeywords("Keywords");
+			// 创建时间
+			document.addCreationDate();
+
+			// document.setMargins(30, 20, 20, 20);
+			PdfPTable table = new PdfPTable(2);
+
+			table.setPaddingTop(3);// 顶部空白区高度
+			// table.setTotalWidth(360);//表格整体宽度
+			table.setWidthPercentage(100); // 宽度100%填充
+			table.setSpacingBefore(20f); // 前间距
+			table.setSpacingAfter(20f); // 后间距
+
+			List<PdfPRow> listRow = table.getRows();
+			// 设置列宽
+			float[] columnWidths = { 1f, 2f };
+			table.setWidths(columnWidths);
+
+			PdfPCell cell = new PdfPCell(new Paragraph("药企基本信息", headfont));
+			cell.setColspan(2);// 占据八列
+			cell.setRowspan(2);
+			cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+			cell.setVerticalAlignment(Element.ALIGN_CENTER);
+			cell.setPadding(5.0f);
+			table.addCell(cell);
+
+            table.addCell(new Paragraph("编号", keyfont));
+            table.addCell(new Paragraph(company.getNumber(), textfont));
+            table.addCell(new Paragraph("社会信用代码/组织机构代码", keyfont));
+            table.addCell(new Paragraph(company.getCreditOrganizationCode(), textfont));
+            table.addCell(new Paragraph("分类码", keyfont));
+            table.addCell(new Paragraph(company.getClassificationCode(), textfont));
+            table.addCell(new Paragraph("省市", keyfont));
+            table.addCell(new Paragraph(company.getProvincesCities(), textfont));
+            table.addCell(new Paragraph("企业名称", keyfont));
+            table.addCell(new Paragraph(company.getCompanyName(), textfont));
+            table.addCell(new Paragraph("法定代表人", keyfont));
+            table.addCell(new Paragraph(company.getLegalRepresentative(), textfont));
+            table.addCell(new Paragraph("企业负责人", keyfont));
+            table.addCell(new Paragraph(company.getResponsiblePerson(), textfont));
+            table.addCell(new Paragraph("质量负责人", keyfont));
+            table.addCell(new Paragraph(company.getQualityOfficer(), textfont));
+            table.addCell(new Paragraph("注册地址", keyfont));
+            table.addCell(new Paragraph(company.getRegisteredAddress(), textfont));
+            table.addCell(new Paragraph("生产地址", keyfont));
+            table.addCell(new Paragraph(company.getProductionAddress(), textfont));
+            table.addCell(new Paragraph("生产范围", keyfont));
+            table.addCell(new Paragraph(company.getProductionRange(), textfont));
+            table.addCell(new Paragraph("发证日期", keyfont));
+            table.addCell(new Paragraph(company.getIssueDate(), textfont));
+            table.addCell(new Paragraph("有效期至", keyfont));
+            table.addCell(new Paragraph(company.getEffectiveDeadline(), textfont));
+            table.addCell(new Paragraph("发证机关", keyfont));
+            table.addCell(new Paragraph(company.getIssuingAuthority(), textfont));
+            table.addCell(new Paragraph("签发人", keyfont));
+            table.addCell(new Paragraph(company.getIssuer(), textfont));
+            table.addCell(new Paragraph("日常监管机构", keyfont));
+            table.addCell(new Paragraph(company.getRegulator(), textfont));
+            table.addCell(new Paragraph("日常监管人员", keyfont));
+            table.addCell(new Paragraph(company.getSupervisor(), textfont));
+			document.add(table);
+			document.close();
+
+			logger.info("药企报告下载到本地");
+			result.setDatum("/pdf/"+id+".pdf");
+			result.setResult(true);
+		} catch (DocumentException | IOException e) {
+			// TODO Auto-generated catch block
+			logger.info("导出失败");
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 }

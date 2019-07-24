@@ -34,4 +34,9 @@ public interface BusinessService {
 	 * @return
 	 */
 	YaoxintongBusiness getUserByUsername(String username);
+
+	/**
+	 *
+	 */
+	YaoxintongBusiness getUserById(String id);
 }

@@ -77,13 +77,14 @@ public class MedicineController {
 			Font keyfont = new Font(bfChinese, 14, Font.BOLD);
 			Font textfont = new Font(bfChinese, 14, Font.NORMAL);
 
-			PdfWriter.getInstance(document, new FileOutputStream(new File("F:\\POReceiveReport.pdf")));
+            String path = request.getServletContext().getRealPath("/pdf/");
+			PdfWriter.getInstance(document, new FileOutputStream(new File(path+id+".pdf")));
 
 			document.open();
 			// 标题
-			document.addTitle("this is a title");
+			document.addTitle("药信通数据报告");
 			// 作者
-			document.addAuthor("kang");
+			document.addAuthor("药信通");
 			// 主题
 			document.addSubject("this is subject");
 			// 关键字
@@ -135,70 +136,11 @@ public class MedicineController {
 			table.addCell(new Paragraph("生产地址", keyfont));
 			table.addCell(new Paragraph(medicine.getProductPlace(), textfont));
 			document.add(table);
-
-			PdfPTable table2 = new PdfPTable(2);
-
-			table2.setPaddingTop(3);// 顶部空白区高度
-			// table.setTotalWidth(360);//表格整体宽度
-			table2.setWidthPercentage(100); // 宽度100%填充
-			table2.setSpacingBefore(20f); // 前间距
-			table2.setSpacingAfter(20f); // 后间距
-
-			List<PdfPRow> listRow2 = table.getRows();
-			// 设置列宽
-			float[] columnWidths2 = { 1f, 2f };
-			table.setWidths(columnWidths2);
-
-			PdfPCell cell2 = new PdfPCell(new Paragraph("生产药品企业基本信息", headfont));
-			cell2.setColspan(2);// 占据八列
-			cell2.setRowspan(2);
-			cell2.setPadding(5.0f);
-			cell2.setHorizontalAlignment(Element.ALIGN_CENTER);
-			cell2.setVerticalAlignment(Element.ALIGN_CENTER);
-			table2.addCell(cell2);
-			for (MedicineCompany company : proCompanys) {
-				table2.addCell(new Paragraph("编号", keyfont));
-				table2.addCell(new Paragraph(company.getNumber(), textfont));
-				table2.addCell(new Paragraph("社会信用代码/组织机构代码", keyfont));
-				table2.addCell(new Paragraph(company.getCreditOrganizationCode(), textfont));
-				table2.addCell(new Paragraph("分类码", keyfont));
-				table2.addCell(new Paragraph(company.getClassificationCode(), textfont));
-				table2.addCell(new Paragraph("省市", keyfont));
-				table2.addCell(new Paragraph(company.getProvincesCities(), textfont));
-				table2.addCell(new Paragraph("企业名称", keyfont));
-				table2.addCell(new Paragraph(company.getCompanyName(), textfont));
-				table2.addCell(new Paragraph("法定代表人", keyfont));
-				table2.addCell(new Paragraph(company.getLegalRepresentative(), textfont));
-				table2.addCell(new Paragraph("企业负责人", keyfont));
-				table2.addCell(new Paragraph(company.getResponsiblePerson(), textfont));
-				table2.addCell(new Paragraph("质量负责人", keyfont));
-				table2.addCell(new Paragraph(company.getQualityOfficer(), textfont));
-				table2.addCell(new Paragraph("注册地址", keyfont));
-				table2.addCell(new Paragraph(company.getRegisteredAddress(), textfont));
-				table2.addCell(new Paragraph("生产地址", keyfont));
-				table2.addCell(new Paragraph(company.getProductionAddress(), textfont));
-				table2.addCell(new Paragraph("生产范围", keyfont));
-				table2.addCell(new Paragraph(company.getProductionRange(), textfont));
-				table2.addCell(new Paragraph("发证日期", keyfont));
-				table2.addCell(new Paragraph(company.getIssueDate(), textfont));
-				table2.addCell(new Paragraph("有效期至", keyfont));
-				table2.addCell(new Paragraph(company.getEffectiveDeadline(), textfont));
-				table2.addCell(new Paragraph("发证机关", keyfont));
-				table2.addCell(new Paragraph(company.getIssuingAuthority(), textfont));
-				table2.addCell(new Paragraph("签发人", keyfont));
-				table2.addCell(new Paragraph(company.getIssuer(), textfont));
-				table2.addCell(new Paragraph("日常监管机构", keyfont));
-				table2.addCell(new Paragraph(company.getRegulator(), textfont));
-				table2.addCell(new Paragraph("日常监管人员", keyfont));
-				table2.addCell(new Paragraph(company.getSupervisor(), textfont));
-				table2.addCell(new Paragraph(""));
-			}
-			document.add(table2);
-			logger.info(proCompanys.toString());
-
 			document.close();
-			logger.info("报告下载到本地");
-			// 发送邮件
+
+			logger.info("药品报告下载到本地");
+			result.setDatum("/pdf/"+id+".pdf");
+			result.setResult(true);
 		} catch (DocumentException | IOException e) {
 			// TODO Auto-generated catch block
 			logger.info("导出失败");
@@ -355,7 +297,7 @@ public class MedicineController {
 			MapNode mapNode = new MapNode();
 
 			switch (map_op) {
-			case 0:
+			case 0: // 暂时没用（不用管）
 				// 获取制药企业
 				mapNode.setName(medicine.getDrugName());
 				nodes.add(mapNode);
@@ -389,11 +331,15 @@ public class MedicineController {
 					edges.add(mapEdge);
 				}
 				break;
-			case 1:
+			case 1: // 相似药品谱图
 				String drugType3 = medicine.getDrugType3();
 				List<Medicine> medicines = medicineService.searchByDrugType3(drugType3);
 				List<String> names = new ArrayList<>();
 				logger.info("medicines.size() " + medicines.size());
+				// 原来的节点
+                MapNode nodeSource = new MapNode();
+                nodeSource.setName(medicine.getDrugName());
+                nodes.add(nodeSource);
 				for (Medicine m : medicines) {
 					if (!names.contains(m.getDrugName())) {
 						names.add(m.getDrugName());
@@ -403,7 +349,8 @@ public class MedicineController {
 
 						MapEdge mapEdge = new MapEdge();
 						mapEdge.setSource(0);
-						mapEdge.setTarget(medicines.indexOf(m) );
+//						mapEdge.setTarget(medicines.indexOf(m) );
+                        mapEdge.setTarget(nodes.indexOf(node) );
 						mapEdge.setRelation(drugType3);
 						edges.add(mapEdge);
 					}

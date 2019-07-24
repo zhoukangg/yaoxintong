@@ -48,6 +48,7 @@ public class Medicine {
     private Double price;
 
     private Integer hot;
+    private Integer authentication;
 
     public String getId() {
         return id;
@@ -239,5 +240,13 @@ public class Medicine {
 
     public void setHot(Integer hot) {
         this.hot = hot;
+    }
+
+    public Integer getAuthentication() {
+        return authentication;
+    }
+
+    public void setAuthentication(Integer authentication) {
+        this.authentication = authentication;
     }
 }

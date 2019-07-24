@@ -20,6 +20,8 @@ public class AuthenticationDianshang {
     private String dmqmsc;
 
     private String status;
+    private  String website;
+    private Integer websiteStatus;
 
     public Integer getId() {
         return id;
@@ -99,5 +101,18 @@ public class AuthenticationDianshang {
 
     public void setStatus(String status) {
         this.status = status == null ? null : status.trim();
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+    public void setWebsite(String website) {
+        this.website = website == null ? null : website.trim();
+    }
+    public Integer getWebsiteStatus() {
+        return websiteStatus;
+    }
+    public void setWebsiteStatus(Integer websiteStatus) {
+        this.websiteStatus = websiteStatus;
     }
 }

@@ -9,6 +9,7 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.edu.bupt.yaoxintong.service.BusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +28,6 @@ import cn.edu.bupt.yaoxintong.pojo.YaoxintongBusiness;
 import cn.edu.bupt.yaoxintong.response.model.AuthentocationInfo;
 import cn.edu.bupt.yaoxintong.response.model.BusinessInfo;
 import cn.edu.bupt.yaoxintong.service.AuthenticationService;
-import cn.edu.bupt.yaoxintong.service.BusinessService;
 import cn.edu.bupt.yaoxintong.service.ContactInformationService;
 import cn.edu.bupt.yaoxintong.service.LoginTokenService;
 import cn.edu.bupt.yaoxintong.util.Constant;
@@ -49,7 +49,7 @@ public class BusinessController {
 	private static final Logger logger = Logger.getInstance();
 
 	@Autowired
-	BusinessService BusinessService;
+    BusinessService businessService;
 	@Autowired
 	LoginTokenService loginTokenService;
 	@Autowired
@@ -71,10 +71,9 @@ public class BusinessController {
 	 * @return
 	 */
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public @ResponseBody ReturnModel register(String username, String business_name, String business_type,
+	public @ResponseBody ReturnModel register(String username, String business_name, String business_type, String license,
 			String password, String email, @RequestParam(value = "phone", required = false) String phone,
-			@RequestParam(value = "sex", required = false) String sex, HttpServletResponse response,
-			HttpServletRequest request) {
+			@RequestParam(value = "sex", required = false) String sex, HttpServletResponse response, HttpServletRequest request) {
 
 		// 解决Ajax跨域请求问题
 		response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
@@ -82,7 +81,7 @@ public class BusinessController {
 
 		logger.info("======进入了BusinessController的/register方法，参数：username = " + username + " business_name = "
 				+ business_name + " business_type = " + business_type + " email = " + email + " phone = " + phone
-				+ " password = " + password + " sex = " + sex);
+				+ " password = " + password + " sex = " + sex + " license=" +license);
 
 		ReturnModel result = new ReturnModel();
 
@@ -98,7 +97,7 @@ public class BusinessController {
 		}
 
 		// 验证是否该企业已经注册
-		YaoxintongBusiness user = BusinessService.getUserByUsername(username);
+		YaoxintongBusiness user = businessService.getUserByUsername(username);
 		// case already registered
 		if (user != null) {
 			result.setResult(false);
@@ -130,6 +129,8 @@ public class BusinessController {
 		user.setBusinessName(business_name);
 		user.setBusinessType(business_type);
 		user.setRegisterTime(new Date());
+		user.setBusinessLicense(license);
+		user.setStatus("1"); // 1: 已注册 2：认证中 3：已认证
 
 		if (StringUtil.isEmpty(sex)) {
 			user.setSex(Constant.SEX_UNKNOWN);
@@ -148,7 +149,7 @@ public class BusinessController {
 			i2 = insertContactInfo(phone, userId, Constant.CONTACT_INFO_TYPE_PHONE);
 		}
 
-		int i = BusinessService.addUser(user);
+		int i = businessService.addUser(user);
 		result.setResult(i > 0);
 
 		Map<String, Object> datum = new HashMap<String, Object>();
@@ -204,7 +205,7 @@ public class BusinessController {
 			return result;
 		}
 
-		YaoxintongBusiness userByUsername = BusinessService.getUserByUsername(username);
+		YaoxintongBusiness userByUsername = businessService.getUserByUsername(username);
 		if (userByUsername == null) {
 			result.setResult(false);
 			result.setReason(Constant.REASON_BUSINESS_NOT_EXIST);
@@ -282,7 +283,7 @@ public class BusinessController {
 		if (loginToken != null & Constant.LOGIN_TOKEN_STATUS_VALID.equals(loginToken.getStatus())) {
 			String userId = loginToken.getUserid();
 			if (userId != null) {
-				YaoxintongBusiness user = BusinessService.getUser(userId);
+				YaoxintongBusiness user = businessService.getUser(userId);
 				List<ContactInformation> contactInformation = contactInformationService.getContactInfomation(userId);
 				BusinessInfo BusinessInfo = new BusinessInfo();
 				BusinessInfo.setContactInformation(contactInformation);
@@ -335,13 +336,13 @@ public class BusinessController {
 			String userId = loginToken.getUserid();
 			YaoxintongBusiness user = null;
 			if (userId != null) {
-				user = BusinessService.getUser(userId);
+				user = businessService.getUser(userId);
 				if (user != null) {
 
 					// 修改企业信息
 					if (!StringUtil.isEmpty(username)) {
 						// 验证是否该企业名是否已经存在
-						YaoxintongBusiness userExist = BusinessService.getUser(username);
+						YaoxintongBusiness userExist = businessService.getUser(username);
 						// case already registered
 						if (userExist != null) {
 							result.setResult(false);
@@ -367,7 +368,7 @@ public class BusinessController {
 						user.setSex(sex);
 					}
 					logger.info("user:" + user);
-					BusinessService.updateUser(user);
+					businessService.updateUser(user);
 					int i1 = 0, i2 = 0;
 
 					ContactInformation information = null;
@@ -449,7 +450,7 @@ public class BusinessController {
 		logger.info("loginToken:" + loginToken);
 		if (loginToken != null & "1".equals(loginToken.getStatus())) {
 
-			YaoxintongBusiness user = BusinessService.getUser(loginToken.getUserid());
+			YaoxintongBusiness user = businessService.getUser(loginToken.getUserid());
 
 			if (user != null) {
 				String enpassword = passwordHelper.encryptPassword(password, user.getSalt());
@@ -458,7 +459,7 @@ public class BusinessController {
 					user.setPassword(encryptPassword.getPassword());// 密码加密
 					user.setSalt(encryptPassword.getSalt());
 					logger.info("user:" + user);
-					BusinessService.updateUser(user);
+					businessService.updateUser(user);
 					result.setResult(true);
 				} else {
 					result.setResult(false);
@@ -504,7 +505,7 @@ public class BusinessController {
 		logger.info("loginToken:" + loginToken);
 		if (loginToken != null & Constant.LOGIN_TOKEN_STATUS_VALID.equals(loginToken.getStatus())) {
 			logger.info("loginToken.getUserid():" + loginToken.getUserid());
-			YaoxintongBusiness user = BusinessService.getUser(loginToken.getUserid());
+			YaoxintongBusiness user = businessService.getUser(loginToken.getUserid());
 
 			if (user != null) {
 				loginToken.setStatus("0");
@@ -578,7 +579,7 @@ public class BusinessController {
 		logger.info("loginToken:" + loginToken);
 		if (loginToken != null & Constant.LOGIN_TOKEN_STATUS_VALID.equals(loginToken.getStatus())) {
 			logger.info("loginToken.getUserid():" + loginToken.getUserid());
-			YaoxintongBusiness user = BusinessService.getUser(loginToken.getUserid());
+			YaoxintongBusiness user = businessService.getUser(loginToken.getUserid());
 
 			if (user != null) {
 				AuthenticationYaoqi authentication = new AuthenticationYaoqi();
@@ -661,6 +662,10 @@ public class BusinessController {
 					}
 				}
 
+                authentication.setStatus("0"); // 0：申请中  2：认证成功
+                YaoxintongBusiness yaoxintongBusiness = businessService.getUserById(authentication.getBusinessId());
+                yaoxintongBusiness.setStatus("2"); // 管理员页面 2：申请中
+                businessService.updateUser(yaoxintongBusiness);
 				if (authenticationService.addAuthenticationYaoqi(authentication)) {
 					result.setResult(true);
 				} else {
@@ -682,7 +687,7 @@ public class BusinessController {
 
 	@RequestMapping(value = "/applyAuthentication/dianshang", method = RequestMethod.POST)
 	public @ResponseBody ReturnModel applyAuthenticationDianshang(String token, HttpServletResponse response,
-			HttpServletRequest request, String corporateName, String contact, String address, String phone,
+			HttpServletRequest request, String corporateName, String contact, String address, String phone,String website,
 			MultipartFile icp_filing_information, MultipartFile idtsqc, MultipartFile dmqmsc) throws Exception {
 		ReturnModel result = new ReturnModel();
 
@@ -701,7 +706,7 @@ public class BusinessController {
 		logger.info("loginToken:" + loginToken);
 		if (loginToken != null & Constant.LOGIN_TOKEN_STATUS_VALID.equals(loginToken.getStatus())) {
 			logger.info("loginToken.getUserid():" + loginToken.getUserid());
-			YaoxintongBusiness user = BusinessService.getUser(loginToken.getUserid());
+			YaoxintongBusiness user = businessService.getUser(loginToken.getUserid());
 			if (user != null) {
 				AuthenticationDianshang authentication = new AuthenticationDianshang();
 				String businessId = user.getId();
@@ -782,7 +787,11 @@ public class BusinessController {
 						return result;
 					}
 				}
-
+                authentication.setWebsite(website);
+				authentication.setWebsiteStatus(0); // 0:带认证 1：认证通过 其他：未通过
+                authentication.setStatus("0"); // 0：申请中  2：认证成功
+                YaoxintongBusiness yaoxintongBusiness = businessService.getUserById(authentication.getBusinessId());
+                yaoxintongBusiness.setStatus("2"); // 管理员页面 2：申请中
 				if (authenticationService.addAuthenticationDianshang(authentication)) {
 					result.setResult(true);
 				} else {
@@ -829,7 +838,7 @@ public class BusinessController {
 		if (loginToken != null & Constant.LOGIN_TOKEN_STATUS_VALID.equals(loginToken.getStatus())) {
 			logger.info("loginToken.getUserid():" + loginToken.getUserid());
 			String user_id = loginToken.getUserid();
-			YaoxintongBusiness user = BusinessService.getUser(user_id);
+			YaoxintongBusiness user = businessService.getUser(user_id);
 			AuthentocationInfo info = new AuthentocationInfo();
 			if (user != null) {
 				BusinessInfo businessInfo = new BusinessInfo();

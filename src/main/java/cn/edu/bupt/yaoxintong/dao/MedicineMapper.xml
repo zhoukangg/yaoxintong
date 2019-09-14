@@ -27,6 +27,7 @@
     <result column="price" property="price" jdbcType="DOUBLE" />
     <result column="hot" property="hot" jdbcType="INTEGER" />
     <result column="authentication" property="authentication" jdbcType="INTEGER" />
+    <result column="purchase_url" property="purchaseUrl" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -90,7 +91,7 @@
     id, drug_name, brand, manufacturer, license_number, recommend, drug_form, type, drug_type1,
     drug_type2, drug_type3, prescription_type, import_type, drug_specifications, product_place,
     valid_period, use_for_illness, use_for_people, use_function, dosage_use, Storage_condition, 
-    product_weight, price, hot, authentication
+    product_weight, price, hot, authentication, purchase_url
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.edu.bupt.yaoxintong.pojo.MedicineExample" >
     select
@@ -130,7 +131,7 @@
       import_type, drug_specifications, product_place, 
       valid_period, use_for_illness, use_for_people, 
       use_function, dosage_use, Storage_condition, 
-      product_weight, price, hot, authentication
+      product_weight, price, hot, authentication, purchase_url
       )
     values (#{id,jdbcType=VARCHAR}, #{drugName,jdbcType=VARCHAR}, #{brand,jdbcType=VARCHAR}, 
       #{manufacturer,jdbcType=VARCHAR}, #{licenseNumber,jdbcType=VARCHAR}, #{recommend,jdbcType=TINYINT}, 
@@ -139,7 +140,8 @@
       #{importType,jdbcType=VARCHAR}, #{drugSpecifications,jdbcType=VARCHAR}, #{productPlace,jdbcType=VARCHAR}, 
       #{validPeriod,jdbcType=VARCHAR}, #{useForIllness,jdbcType=VARCHAR}, #{useForPeople,jdbcType=VARCHAR}, 
       #{useFunction,jdbcType=VARCHAR}, #{dosageUse,jdbcType=VARCHAR}, #{storageCondition,jdbcType=VARCHAR}, 
-      #{productWeight,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE}, #{hot,jdbcType=INTEGER}, #{authentication,jdbcType=INTEGER}
+      #{productWeight,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE}, #{hot,jdbcType=INTEGER}, #{authentication,jdbcType=INTEGER},
+      #{purchaseUrl,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.edu.bupt.yaoxintong.pojo.Medicine" >
@@ -220,6 +222,9 @@
         <if test="authentication != null" >
             authentication,
         </if>
+        <if test="purchaseUrl != null" >
+            purchase_url,
+        </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -297,6 +302,10 @@
         <if test="authentication != null" >
             #{authentication,jdbcType=INTEGER},
         </if>
+        <if test="purchaseUrl != null" >
+            #{purchase_url,jdbcType=VARCHAR},
+        </if>
+
     </trim>
   </insert>
   <select id="countByExample" parameterType="cn.edu.bupt.yaoxintong.pojo.MedicineExample" resultType="java.lang.Integer" >
@@ -384,6 +393,10 @@
         <if test="record.authentication != null" >
             hot = #{record.authentication,jdbcType=INTEGER},
         </if>
+
+        <if test="record.purchaseUrl != null" >
+            purchase_url = #{record.purchaseUrl,jdbcType=VARCHAR},
+        </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -415,7 +428,8 @@
       product_weight = #{record.productWeight,jdbcType=VARCHAR},
       price = #{record.price,jdbcType=DOUBLE},
       hot = #{record.hot,jdbcType=INTEGER},
-      hot = #{record.authentication,jdbcType=INTEGER}
+      authentication = #{record.authentication,jdbcType=INTEGER},
+      purchase_url = #{record.purchaseUrl,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -496,6 +510,10 @@
         <if test="authentication != null" >
             hot = #{authentication,jdbcType=INTEGER},
         </if>
+
+        <if test="purchaseUrl != null" >
+            purchase_url = #{purchaseUrl,jdbcType=VARCHAR},
+        </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
@@ -524,7 +542,8 @@
       product_weight = #{productWeight,jdbcType=VARCHAR},
       price = #{price,jdbcType=DOUBLE},
       hot = #{hot,jdbcType=INTEGER},
-      hot = #{authentication,jdbcType=INTEGER}
+      hot = #{authentication,jdbcType=INTEGER},
+      purchase_url = #{purchaseUrl,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>

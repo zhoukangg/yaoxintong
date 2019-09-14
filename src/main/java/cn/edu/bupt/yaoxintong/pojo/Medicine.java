@@ -50,6 +50,16 @@ public class Medicine {
     private Integer hot;
     private Integer authentication;
 
+    public String getPurchaseUrl() {
+        return purchaseUrl;
+    }
+
+    public void setPurchaseUrl(String purchaseUrl) {
+        this.purchaseUrl = purchaseUrl;
+    }
+
+    private String  purchaseUrl;
+
     public String getId() {
         return id;
     }

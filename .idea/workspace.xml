@@ -8,8 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a7a4674e-810c-44b7-9536-3c5b446d17bd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MedicineMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MedicineMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/Medicine.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -93,11 +91,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MedicineController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MedicineController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/MedicineController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
               <caret line="56" column="71" selection-start-line="49" selection-end-line="56" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="15">
+                <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -175,6 +185,7 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/controller/MedicineController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/pojo/Medicine.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MedicineMapper.xml" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -224,119 +235,6 @@
               <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
               <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
               <item name="library" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bupt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bupt" type="462c0819:PsiDirectoryNode" />
-              <item name="springmvc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bupt" type="462c0819:PsiDirectoryNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bupt" type="462c0819:PsiDirectoryNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bupt" type="462c0819:PsiDirectoryNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bupt" type="462c0819:PsiDirectoryNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yaoxintong" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="yaoxintong" type="462c0819:PsiDirectoryNode" />
-              <item name="pdf" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -612,12 +510,12 @@
       <workItem from="1563971240666" duration="8738000" />
       <workItem from="1564314701023" duration="1253000" />
       <workItem from="1564843399487" duration="81000" />
-      <workItem from="1568475148712" duration="148000" />
+      <workItem from="1568475148712" duration="733000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30878000" />
+    <option name="totallyTimeSpent" value="31463000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -636,8 +534,9 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" id="JRebel Setup Guide" visible="true" weight="0.32967034" />
+      <window_info anchor="right" id="JRebel Setup Guide" weight="0.32967034" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32820514" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
@@ -656,7 +555,6 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32820514" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
@@ -668,13 +566,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/dao/MedicineMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4575">
-          <caret line="305" column="45" lean-forward="true" selection-start-line="305" selection-start-column="45" selection-end-line="305" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/bupt/yaoxintong/util/Constant.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1365">
@@ -1049,6 +940,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="56" column="71" selection-start-line="49" selection-end-line="56" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="15">
+            <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
